@@ -166,4 +166,15 @@ public class IoCoreFileSys : IoCore
             return 0;
         }
     }
+
+    public override Stream GetStream(string path)
+    {
+        path = GetFilePath(path);
+        if (path == null)
+        {
+            return null;
+        }
+
+        return File.OpenRead(path);
+    }
 }

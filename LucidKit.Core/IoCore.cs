@@ -38,4 +38,9 @@ public abstract class IoCore
     {
         return 1;
     }
+
+    public virtual Stream GetStream(String path)
+    {
+        return null;
+    }
 }
