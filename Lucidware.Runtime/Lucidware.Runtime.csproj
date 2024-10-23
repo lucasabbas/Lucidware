@@ -4,8 +4,9 @@
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net7.0</TargetFramework>
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'ios' ">net8.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>Lucidware.Runtime</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LucidKit.Core\LucidKit.Core.csproj" />
+    <ProjectReference Include="..\Lucidware.Core\Lucidware.Core.csproj" />
   </ItemGroup>
 </Project>

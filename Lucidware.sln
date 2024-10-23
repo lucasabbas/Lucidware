@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LucidKit.Core", "LucidKit.Core\LucidKit.Core.csproj", "{5DF0D2DD-B06B-47E6-AADF-90F12D9FC0F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucidware.Core", "Lucidware.Core\Lucidware.Core.csproj", "{5DF0D2DD-B06B-47E6-AADF-90F12D9FC0F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LucidKit.Runtime", "LucidKit.Runtime\LucidKit.Runtime.csproj", "{C6F3EF42-4C32-4C68-A1C1-6BBB0E18E9FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucidware.Runtime", "Lucidware.Runtime\Lucidware.Runtime.csproj", "{C6F3EF42-4C32-4C68-A1C1-6BBB0E18E9FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@ using Godot;
 using MoonSharp.Interpreter;
 using Timer = Godot.Timer;
 
-namespace LucidKit.Core.Modules;
+namespace Lucidware.Core.Modules;
 
 public class GdCore : Module
 {

@@ -1,6 +1,6 @@
 using Godot;
 
-namespace LucidKit.Core;
+namespace Lucidware.Core;
 
 public partial class LuaNode : Node
 {

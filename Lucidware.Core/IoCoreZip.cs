@@ -1,6 +1,6 @@
 using System.IO.Compression;
 
-namespace LucidKit.Core;
+namespace Lucidware.Core;
 
 public class IoCoreZip : IoCore
 {

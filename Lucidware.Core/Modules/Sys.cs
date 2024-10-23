@@ -1,6 +1,6 @@
 using MoonSharp.Interpreter;
 
-namespace LucidKit.Core.Modules;
+namespace Lucidware.Core.Modules;
 
 public class Sys : Module
 {

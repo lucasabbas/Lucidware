@@ -1,4 +1,4 @@
-namespace LucidKit.Core;
+namespace Lucidware.Core;
 
 public class IoCoreFileSys : IoCore
 {

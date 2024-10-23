@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using LucidKit.Core;
+using Lucidware.Core;
 
 public partial class Main : SimpleRuntimeNode
 {

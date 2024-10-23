@@ -4,20 +4,20 @@ using MoonSharp.Interpreter;
 using MoonSharp.Interpreter.Platforms;
 using Script = MoonSharp.Interpreter.Script;
 
-namespace LucidKit.Core;
+namespace Lucidware.Core;
 
-public class LucidKitPlatformAccessor : PlatformAccessorBase
+public class LucidwarePlatformAccessor : PlatformAccessorBase
 {
     public LuaEnviroment Enviroment;
     
-    public LucidKitPlatformAccessor(LuaEnviroment enviroment)
+    public LucidwarePlatformAccessor(LuaEnviroment enviroment)
     {
         Enviroment = enviroment;
     }
     
     public override string GetPlatformNamePrefix()
     {
-        return "LucidKit";
+        return "Lucidware";
     }
 
     public override void DefaultPrint(string content)

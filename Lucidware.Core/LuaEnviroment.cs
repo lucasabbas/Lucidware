@@ -1,10 +1,10 @@
 using Godot;
-using LucidKit.Core.Modules;
+using Lucidware.Core.Modules;
 using MoonSharp.Interpreter;
 using MoonSharp.VsCodeDebugger;
 using Script = MoonSharp.Interpreter.Script;
 
-namespace LucidKit.Core;
+namespace Lucidware.Core;
 
 public class LuaEnviroment
 {
@@ -30,13 +30,13 @@ public class LuaEnviroment
         Script = new Script();
         server = new MoonSharpVsCodeDebugServer();
         IoCore = new IoCoreMulti();
-        Script.GlobalOptions.Platform = new LucidKitPlatformAccessor(this);
+        Script.GlobalOptions.Platform = new LucidwarePlatformAccessor(this);
         Script.Options.ScriptLoader = new IoCoreScriptLoader(IoCore);
         
         UserData.RegisterType<IoCoreMulti>(); // Register the IoCoreMulti type
         Script.Globals["ioCore"] = IoCore;
         
-        EnviromentVariables["PLATFORM"] = "LucidKit";
+        EnviromentVariables["PLATFORM"] = "Lucidware";
         EnviromentVariables["PLATFORM_VERSION"] = "1.0.0";
 
         EnviromentVariables["OS_NAME"] = OS.GetName();

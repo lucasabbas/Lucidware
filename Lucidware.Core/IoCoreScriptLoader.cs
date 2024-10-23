@@ -1,7 +1,7 @@
 using MoonSharp.Interpreter;
 using MoonSharp.Interpreter.Loaders;
 
-namespace LucidKit.Core;
+namespace Lucidware.Core;
 
 public class IoCoreScriptLoader : ScriptLoaderBase
 {
