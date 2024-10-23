@@ -9,24 +9,17 @@ public partial class SimpleRuntimeNode : Node
     public override void _Ready()
     {
         var args = OS.GetCmdlineArgs();
-        if (args.Length > 0)
+        for (var i = 0; i < args.Length; i++)
         {
-            StartFromPath(args[0]);
-        }
-        else
-        {
-            for (var i = 0; i < args.Length; i++)
+            if (args[i].StartsWith("--dirpath="))
             {
-                if (args[i].StartsWith("--dirpath="))
-                {
-                    var p = args[i].Replace("--dirpath=", "");
-                    StartFromPath(p);
-                }
-                else if (args[i].StartsWith("--spkgpath="))
-                {
-                    var p = args[i].Replace("--spkgpath=", "");
-                    StartFromZipFile(p);
-                }
+                var p = args[i].Replace("--dirpath=", "");
+                StartFromPath(p);
+            }
+            else if (args[i].StartsWith("--spkgpath="))
+            {
+                var p = args[i].Replace("--spkgpath=", "");
+                StartFromZipFile(p);
             }
         }
     }
