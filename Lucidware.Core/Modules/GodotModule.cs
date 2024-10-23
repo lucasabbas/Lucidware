@@ -4,9 +4,9 @@ using Timer = Godot.Timer;
 
 namespace Lucidware.Core.Modules;
 
-public class GdCore : Module
+public class GodotModule : Module
 {
-    public GdCore(LuaEnviroment luaEnviroment) : base(luaEnviroment)
+    public GodotModule(LuaEnviroment luaEnviroment) : base(luaEnviroment)
     {
     }
     
@@ -408,4 +408,351 @@ public class GdCore : Module
     {
         return new MenuBar();
     }
+    
+    public NinePatchRect NinePatchRect()
+    {
+        return new NinePatchRect();
+    }
+    
+    public Panel Panel()
+    {
+        return new Panel();
+    }
+    
+    public ReferenceRect ReferenceRect()
+    {
+        return new ReferenceRect();
+    }
+    
+    public RichTextLabel RichTextLabel()
+    {
+        return new RichTextLabel();
+    }
+    
+    public Godot.Range Range()
+    {
+        return new Godot.Range();
+    }
+    
+    public ProgressBar ProgressBar()
+    {
+        return new ProgressBar();
+    }
+    
+    public HScrollBar HScrollBar()
+    {
+        return new HScrollBar();
+    }
+    
+    public VScrollBar VScrollBar()
+    {
+        return new VScrollBar();
+    }
+    
+    
+    public HSlider HSlider()
+    {
+        return new HSlider();
+    }
+    
+    public VSlider VSlider()
+    {
+        return new VSlider();
+    }
+    
+    public SpinBox SpinBox()
+    {
+        return new SpinBox();
+    }
+    
+    public TextureProgressBar TextureProgressBar()
+    {
+        return new TextureProgressBar();
+    }
+    
+    public HSeparator HSeparator()
+    {
+        return new HSeparator();
+    }
+    
+    public VSeparator VSeparator()
+    {
+        return new VSeparator();
+    }
+    
+    public TabBar TabBar()
+    {
+        return new TabBar();
+    }
+    
+    public TextureRect TextureRect()
+    {
+        return new TextureRect();
+    }
+    
+    public Tree Tree()
+    {
+        return new Tree();
+    }
+    
+    public VideoStreamPlayer VideoStreamPlayer()
+    {
+        return new VideoStreamPlayer();
+    }
+
+    public Node2D Node2D()
+    {
+        return new Node2D();
+    }
+
+    public AnimatedSprite2D AnimatedSprite2D()
+    {
+        return new AnimatedSprite2D();
+    }
+
+    public AudioListener2D AudioListener2D()
+    {
+        return new AudioListener2D();
+    }
+
+    public AudioStreamPlayer2D AudioStreamPlayer2D()
+    {
+        return new AudioStreamPlayer2D();
+    }
+
+    public BackBufferCopy BackBufferCopy()
+    {
+        return new BackBufferCopy();
+    }
+
+    public Bone2D Bone2D()
+    {
+        return new Bone2D();
+    }
+
+    public Camera2D Camera2D()
+    {
+        return new Camera2D();
+    }
+
+    public CanvasGroup CanvasGroup()
+    {
+        return new CanvasGroup();
+    }
+
+    public CanvasModulate CanvasModulate()
+    {
+        return new CanvasModulate();
+    }
+
+    public Area2D Area2D()
+    {
+        return new Area2D();
+    }
+
+    public CharacterBody2D CharacterBody2D()
+    {
+        return new CharacterBody2D();
+    }
+
+    public RigidBody2D RigidBody2D()
+    {
+        return new RigidBody2D();
+    }
+
+    public PhysicalBone2D PhysicalBone2D()
+    {
+        return new PhysicalBone2D();
+    }
+
+    public StaticBody2D StaticBody2D()
+    {
+        return new StaticBody2D();
+    }
+
+    public AnimatableBody2D AnimatableBody2D()
+    {
+        return new AnimatableBody2D();
+    }
+
+    public CollisionPolygon2D CollisionPolygon2D()
+    {
+        return new CollisionPolygon2D();
+    }
+
+    public CollisionShape2D CollisionShape2D()
+    {
+        return new CollisionShape2D();
+    }
+
+    public CpuParticles2D CpuParticles2D()
+    {
+        return new CpuParticles2D();
+    }
+
+    public GpuParticles2D GpuParticles2D()
+    {
+        return new GpuParticles2D();
+    }
+
+    public DampedSpringJoint2D DampedSpringJoint2D()
+    {
+        return new DampedSpringJoint2D();
+    }
+
+    public GrooveJoint2D GrooveJoint2D()
+    {
+        return new GrooveJoint2D();
+    }
+
+    public PinJoint2D PinJoint2D()
+    {
+        return new PinJoint2D();
+    }
+
+    public DirectionalLight2D DirectionalLight2D()
+    {
+        return new DirectionalLight2D();
+    }
+
+    public PointLight2D PointLight2D()
+    {
+        return new PointLight2D();
+    }
+
+    public LightOccluder2D LightOccluder2D()
+    {
+        return new LightOccluder2D();
+    }
+
+    public Line2D Line2D()
+    {
+        return new Line2D();
+    }
+
+    public Marker2D Marker2D()
+    {
+        return new Marker2D();
+    }
+
+    public MeshInstance2D MeshInstance2D()
+    {
+        return new MeshInstance2D();
+    }
+
+    public MultiMeshInstance2D MultiMeshInstance2D()
+    {
+        return new MultiMeshInstance2D();
+    }
+
+    public NavigationLink2D NavigationLink2D()
+    {
+        return new NavigationLink2D();
+    }
+
+    public NavigationObstacle2D NavigationObstacle2D()
+    {
+        return new NavigationObstacle2D();
+    }
+
+    public NavigationRegion2D NavigationRegion2D()
+    {
+        return new NavigationRegion2D();
+    }
+
+    public Parallax2D Parallax2D()
+    {
+        return new Parallax2D();
+    }
+
+    public ParallaxLayer ParallaxLayer()
+    {
+        return new ParallaxLayer();
+    }
+
+    public Path2D Path2D()
+    {
+        return new Path2D();
+    }
+
+    public PathFollow2D PathFollow2D()
+    {
+        return new PathFollow2D();
+    }
+
+    public Polygon2D Polygon2D()
+    {
+        return new Polygon2D();
+    }
+
+    public RayCast2D RayCast2D()
+    {
+        return new RayCast2D();
+    }
+
+    public RemoteTransform2D RemoteTransform2D()
+    {
+        return new RemoteTransform2D();
+    }
+
+    public ShapeCast2D ShapeCast2D()
+    {
+        return new ShapeCast2D();
+    }
+
+    public Skeleton2D Skeleton2D()
+    {
+        return new Skeleton2D();
+    }
+
+    public Sprite2D Sprite2D()
+    {
+        return new Sprite2D();
+    }
+
+    public TileMap TileMap()
+    {
+        return new TileMap();
+    }
+
+    public TileMapLayer TileMapLayer()
+    {
+        return new TileMapLayer();
+    }
+
+    public TouchScreenButton TouchScreenButton()
+    {
+        return new TouchScreenButton();
+    }
+
+    public VisibleOnScreenNotifier2D VisibleOnScreenNotifier2D()
+    {
+        return new VisibleOnScreenNotifier2D();
+    }
+
+    public VisibleOnScreenEnabler2D VisibleOnScreenEnabler2D()
+    {
+        return new VisibleOnScreenEnabler2D();
+    }
+
+    public Node3D Node3D()
+    {
+        return new Node3D();
+    }
+
+    public AudioListener3D AudioListener3D()
+    {
+        return new AudioListener3D();
+    }
+
+    public AudioStreamPlayer3D AudioStreamPlayer3D()
+    {
+        return new AudioStreamPlayer3D();
+    }
+
+    public BoneAttachment3D BoneAttachment3D()
+    {
+        return new BoneAttachment3D();
+    }
+
 }
