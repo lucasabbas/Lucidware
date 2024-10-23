@@ -73,6 +73,7 @@ public class IoCoreFileSys : IoCore
         File.WriteAllText(path, s);
     }
 
+
     public override byte[] LoadBuffer(string assetPath)
     {
         string path = GetFilePath(assetPath);

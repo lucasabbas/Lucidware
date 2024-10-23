@@ -13,16 +13,6 @@ public abstract class IoCore
     {
 
     }
-    
-    public virtual async Task<string> LoadStringAsync(string assetPath)
-    {
-        return null;
-    }
-
-    public virtual async void SaveStringAsync(string assetPath, string s)
-    {
-        
-    }
 
     public virtual byte[] LoadBuffer(string assetPath)
     {
@@ -32,16 +22,6 @@ public abstract class IoCore
     public virtual void SaveBuffer(string assetPath, byte[] bytes)
     {
 
-    }
-    
-    public virtual async Task<byte[]> LoadBufferAsync(string assetPath)
-    {
-        return null;
-    }
-
-    public virtual async void SaveBufferAsync(string assetPath, byte[] bytes)
-    {
-        
     }
 
     public List<String> GetFileListAll(string extension, bool recursive = true)
