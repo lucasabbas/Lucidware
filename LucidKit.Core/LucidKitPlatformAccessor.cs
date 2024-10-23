@@ -10,7 +10,7 @@ public class LucidKitPlatformAccessor : PlatformAccessorBase
 {
     public LuaEnviroment Enviroment;
     
-    LucidKitPlatformAccessor(LuaEnviroment enviroment)
+    public LucidKitPlatformAccessor(LuaEnviroment enviroment)
     {
         Enviroment = enviroment;
     }
@@ -27,37 +27,77 @@ public class LucidKitPlatformAccessor : PlatformAccessorBase
 
     public override Stream IO_OpenFile(Script script, string filename, Encoding encoding, string mode)
     {
-        throw new NotImplementedException();
+        StreamMode streamMode;
+        switch (mode)
+        {
+            case "r":
+                streamMode = StreamMode.Read;
+                break;
+            case "w":
+                streamMode = StreamMode.Write;
+                break;
+            case "a":
+                streamMode = StreamMode.Append;
+                break;
+            case "r+":
+                streamMode = StreamMode.ReadPlus;
+                break;
+            case "w+":
+                streamMode = StreamMode.WritePlus;
+                break;
+            case "a+":
+                streamMode = StreamMode.AppendPlus;
+                break;
+            default:
+                throw new Exception("Invalid mode");
+        }
+        
+        return Enviroment.IoCore.GetStream(filename, streamMode);
     }
 
     public override Stream IO_GetStandardStream(StandardFileType type)
     {
-        throw new NotImplementedException();
+        if (type == StandardFileType.StdIn)
+        {
+            return Enviroment.IoCore.GetStream("stdin", StreamMode.Read);
+        }
+        else if (type == StandardFileType.StdOut)
+        {
+            return Enviroment.IoCore.GetStream("stdout", StreamMode.Write);
+        }
+        else if (type == StandardFileType.StdErr)
+        {
+            return Enviroment.IoCore.GetStream("stderr", StreamMode.Write);
+        }
+        else
+        {
+            throw new Exception("Invalid Standard File Type");
+        }
     }
 
     public override string IO_OS_GetTempFilename()
     {
-        throw new NotImplementedException();
+        return Enviroment.IoCore.GetTempFilename();
     }
 
     public override void OS_ExitFast(int exitCode)
     {
-        throw new NotImplementedException();
+        Enviroment.Exit(exitCode);
     }
 
     public override bool OS_FileExists(string file)
     {
-        throw new NotImplementedException();
+        return Enviroment.IoCore.FileExists(file);
     }
 
     public override void OS_FileDelete(string file)
     {
-        throw new NotImplementedException();
+        Enviroment.IoCore.DeleteFile(file);
     }
 
     public override void OS_FileMove(string src, string dst)
     {
-        throw new NotImplementedException();
+        Enviroment.IoCore.MoveFile(src, dst);
     }
 
     public override int OS_Execute(string cmdline)
@@ -67,11 +107,20 @@ public class LucidKitPlatformAccessor : PlatformAccessorBase
 
     public override CoreModules FilterSupportedCoreModules(CoreModules module)
     {
-        throw new NotImplementedException();
+        return CoreModules.Preset_Complete;
     }
 
     public override string GetEnvironmentVariable(string envvarname)
     {
-        throw new NotImplementedException();
+        var envVariables = Enviroment.EnviromentVariables;
+        foreach (var envKey in envVariables)
+        {
+            if (envKey.Key == envvarname)
+            {
+                return envKey.Value;
+            }
+        }
+        
+        return null;
     }
 }

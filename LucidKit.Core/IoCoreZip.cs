@@ -116,14 +116,10 @@ public class IoCoreZip : IoCore
         return assets;
     }
 
-    public override Stream GetStream(string path)
+    public override Stream GetStream(string path, StreamMode mode)
     {
         path = GetFilePath(path);
-        ZipArchiveEntry entry = zipArchive.GetEntry(path);
-        if (entry == null)
-        {
-            return null;
-        }
-        return entry.Open();
+
+        return new ZipStream(zipArchive, path, mode);
     }
 }

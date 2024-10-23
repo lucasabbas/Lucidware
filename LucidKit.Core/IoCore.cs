@@ -33,14 +33,36 @@ public abstract class IoCore
     {
         return null;
     }
+    
+    public bool FileExists(string path)
+    {
+        return LoadBuffer(path) != null;
+    }
+    
+    public virtual void DeleteFile(string path)
+    {
+        
+    }
+    
+    public void MoveFile(string source, string dest)
+    {
+        byte[] buffer = LoadBuffer(source);
+        SaveBuffer(dest, buffer);
+        DeleteFile(source);
+    }
 
     public virtual int CreateDirectory(string path)
     {
         return 1;
     }
 
-    public virtual Stream GetStream(String path)
+    public virtual Stream GetStream(String path, StreamMode mode)
     {
         return null;
+    }
+    
+    public String GetTempFilename()
+    {
+        return PathUrl + Path.GetTempFileName();
     }
 }

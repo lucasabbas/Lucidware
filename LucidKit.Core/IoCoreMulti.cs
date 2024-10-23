@@ -3,12 +3,12 @@ namespace LucidKit.Core;
 public class IoCoreMulti : IoCore
 {
     public List<IoCore> IoCores { get; } = new();
-    
-    IoCoreMulti()
+
+    public IoCoreMulti()
     {
         PathUrl = "ioCoreMulti://";
     }
-    
+
     public void Register(IoCore ioCore)
     {
         IoCores.Add(ioCore);
@@ -115,17 +115,47 @@ public class IoCoreMulti : IoCore
         return fileList;
     }
 
-    public override Stream GetStream(string path)
+    public override Stream GetStream(string path, StreamMode mode)
     {
         for (int i = 0; i < IoCores.Count; i++)
         {
             var ioCore = IoCores[i];
             if (path.StartsWith(ioCore.PathUrl))
             {
-                return ioCore.GetStream(path);
+                return ioCore.GetStream(path, mode);
             }
         }
-        
+
+        return null;
+    }
+
+    public override void DeleteFile(string path)
+    {
+        for (int i = 0; i < IoCores.Count; i++)
+        {
+            var ioCore = IoCores[i];
+            if (path.StartsWith(ioCore.PathUrl))
+            {
+                ioCore.DeleteFile(path);
+                return;
+            }
+        }
+    }
+
+    public String GetFullPath(string path)
+    {
+        for (int i = 0; i < IoCores.Count; i++)
+        {
+            var ioCore = IoCores[i];
+            if (path.StartsWith(ioCore.PathUrl))
+            {
+                if (ioCore is IoCoreFileSys fileSys)
+                {
+                    return fileSys.GetFilePath(path);
+                }
+            }
+        }
+
         return null;
     }
 }

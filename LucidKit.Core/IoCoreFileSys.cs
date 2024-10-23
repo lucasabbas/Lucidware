@@ -167,7 +167,7 @@ public class IoCoreFileSys : IoCore
         }
     }
 
-    public override Stream GetStream(string path)
+    public override Stream GetStream(string path, StreamMode mode)
     {
         path = GetFilePath(path);
         if (path == null)
@@ -175,6 +175,43 @@ public class IoCoreFileSys : IoCore
             return null;
         }
 
-        return File.OpenRead(path);
+        if (mode == StreamMode.Read)
+        {
+            return File.OpenRead(path);
+        }
+        else if (mode == StreamMode.Write)
+        {
+            return File.OpenWrite(path);
+        }
+        else if (mode == StreamMode.Append)
+        {
+            return File.Open(path, FileMode.Append);
+        }
+        else if (mode == StreamMode.ReadPlus)
+        {
+            return File.Open(path, FileMode.Open, FileAccess.ReadWrite);
+        }
+        else if (mode == StreamMode.WritePlus)
+        {
+            return File.Open(path, FileMode.Open, FileAccess.ReadWrite);
+        }
+        else if (mode == StreamMode.AppendPlus)
+        {
+            return File.Open(path, FileMode.Append, FileAccess.ReadWrite);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public override void DeleteFile(string path)
+    {
+        path = GetFilePath(path);
+        if (path == null)
+        {
+            return;
+        }
+        File.Delete(path);
     }
 }
