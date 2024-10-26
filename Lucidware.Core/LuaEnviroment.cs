@@ -50,6 +50,7 @@ public class LuaEnviroment
         IoCore = new IoCoreMulti();
         Script.GlobalOptions.Platform = new LucidwarePlatformAccessor(this);
         Script.Options.ScriptLoader = new IoCoreScriptLoader(IoCore);
+        Script.Globals["doubleToFloat"] = (Func<double, float>)DoubleToFloat;
         
         UserData.RegisterType<IoCoreMulti>(); // Register the IoCoreMulti type
         Script.Globals["ioCore"] = IoCore;
@@ -93,5 +94,10 @@ public class LuaEnviroment
     public void Exit(int exitCode)
     {
         OnExit?.Invoke(this, new OnExitEventArgs() { ExitCode = exitCode });
+    }
+    
+    public float DoubleToFloat(double d)
+    {
+        return (float)d;
     }
 }
