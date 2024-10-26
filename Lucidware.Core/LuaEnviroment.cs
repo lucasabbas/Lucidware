@@ -18,6 +18,24 @@ public class LuaEnviroment
     
     public List<Module> Modules = new();
     
+    private bool _sandboxed = false;
+    
+    public bool Sandboxed
+    {
+        get => _sandboxed;
+        set
+        {
+            if (_sandboxed == false)
+            {
+                _sandboxed = value;
+            }
+            else
+            {
+                throw new Exception("Sandbox cannot be turn off once set to true");
+            }
+        }
+    }
+    
     public class OnExitEventArgs : EventArgs
     {
         public int ExitCode;

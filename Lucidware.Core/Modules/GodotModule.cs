@@ -56,7 +56,8 @@ public class GodotModule : Module
         GdCoreNamespace[nameof(PhysicsDirectSpaceState3D)] = UserData.CreateStatic(typeof(PhysicsDirectSpaceState3D));
         GdCoreNamespace[nameof(PhysicsServer3D)] = UserData.CreateStatic(typeof(PhysicsServer3D));
         GdCoreNamespace[nameof(PhysicsServer3DManager)] = UserData.CreateStatic(typeof(PhysicsServer3DManager));
-        GdCoreNamespace[nameof(RenderingDevice)] = UserData.CreateStatic(typeof(RenderingDevice));
+        if (LuaEnviroment.Sandboxed == false)
+            GdCoreNamespace[nameof(RenderingDevice)] = UserData.CreateStatic(typeof(RenderingDevice));
         GdCoreNamespace[nameof(RenderingServer)] = UserData.CreateStatic(typeof(RenderingServer));
         GdCoreNamespace[nameof(ThemeDB)] = UserData.CreateStatic(typeof(ThemeDB));
         GdCoreNamespace[nameof(Time)] = UserData.CreateStatic(typeof(Time));
@@ -76,252 +77,6 @@ public class GodotModule : Module
         UserData.RegisterType<Quaternion>();
         UserData.RegisterType<Aabb>();
         UserData.RegisterType<Node>();
-        UserData.RegisterType<AnimationPlayer>();
-        UserData.RegisterType<AnimationTree>();
-        UserData.RegisterType<AudioStreamPlayer>();
-        UserData.RegisterType<CanvasLayer>();
-        UserData.RegisterType<ParallaxBackground>();
-        UserData.RegisterType<HttpRequest>();
-        UserData.RegisterType<NavigationAgent2D>();
-        UserData.RegisterType<NavigationAgent3D>();
-        UserData.RegisterType<ShaderGlobalsOverride>();
-        UserData.RegisterType<StatusIndicator>();
-        UserData.RegisterType<Timer>();
-        UserData.RegisterType<SubViewport>();
-        UserData.RegisterType<Window>();
-        UserData.RegisterType<AcceptDialog>();
-        UserData.RegisterType<ConfirmationDialog>();
-        UserData.RegisterType<FileDialog>();
-        UserData.RegisterType<Popup>();
-        UserData.RegisterType<PopupMenu>();
-        UserData.RegisterType<PopupPanel>();
-        UserData.RegisterType<WorldEnvironment>();
-        UserData.RegisterType<Control>();
-        UserData.RegisterType<Button>();
-        UserData.RegisterType<CheckBox>();
-        UserData.RegisterType<CheckButton>();
-        UserData.RegisterType<ColorPickerButton>();
-        UserData.RegisterType<MenuButton>();
-        UserData.RegisterType<OptionButton>();
-        UserData.RegisterType<LinkButton>();
-        UserData.RegisterType<TextureButton>();
-        UserData.RegisterType<ColorRect>();
-        UserData.RegisterType<Container>();
-        UserData.RegisterType<AspectRatioContainer>();
-        UserData.RegisterType<BoxContainer>();
-        UserData.RegisterType<HBoxContainer>();
-        UserData.RegisterType<VBoxContainer>();
-        UserData.RegisterType<ColorPicker>();
-        UserData.RegisterType<CenterContainer>();
-        UserData.RegisterType<FlowContainer>();
-        UserData.RegisterType<HFlowContainer>();
-        UserData.RegisterType<VFlowContainer>();
-        UserData.RegisterType<GraphElement>();
-        UserData.RegisterType<GridContainer>();
-        UserData.RegisterType<MarginContainer>();
-        UserData.RegisterType<PanelContainer>();
-        UserData.RegisterType<ScrollContainer>();
-        UserData.RegisterType<SplitContainer>();
-        UserData.RegisterType<HSplitContainer>();
-        UserData.RegisterType<VSplitContainer>();
-        UserData.RegisterType<SubViewportContainer>();
-        UserData.RegisterType<TabContainer>();
-        UserData.RegisterType<GraphEdit>();
-        UserData.RegisterType<ItemList>();
-        UserData.RegisterType<Label>();
-        UserData.RegisterType<LineEdit>();
-        UserData.RegisterType<MenuBar>();
-        UserData.RegisterType<NinePatchRect>();
-        UserData.RegisterType<Panel>();
-        UserData.RegisterType<ReferenceRect>();
-        UserData.RegisterType<RichTextLabel>();
-        UserData.RegisterType<Godot.Range>();
-        UserData.RegisterType<ProgressBar>();
-        UserData.RegisterType<HScrollBar>();
-        UserData.RegisterType<VScrollBar>();
-        UserData.RegisterType<HSlider>();
-        UserData.RegisterType<VSlider>();
-        UserData.RegisterType<SpinBox>();
-        UserData.RegisterType<TextureProgressBar>();
-        UserData.RegisterType<HSeparator>();
-        UserData.RegisterType<VSeparator>();
-        UserData.RegisterType<TabBar>();
-        UserData.RegisterType<TextureRect>();
-        UserData.RegisterType<Tree>();
-        UserData.RegisterType<VideoStreamPlayer>();
-        UserData.RegisterType<Node2D>();
-        UserData.RegisterType<AnimatedSprite2D>();
-        UserData.RegisterType<AudioListener2D>();
-        UserData.RegisterType<AudioStreamPlayer2D>();
-        UserData.RegisterType<BackBufferCopy>();
-        UserData.RegisterType<Bone2D>();
-        UserData.RegisterType<Camera2D>();
-        UserData.RegisterType<CanvasGroup>();
-        UserData.RegisterType<CanvasModulate>();
-        UserData.RegisterType<Area2D>();
-        UserData.RegisterType<CharacterBody2D>();
-        UserData.RegisterType<RigidBody2D>();
-        UserData.RegisterType<PhysicalBone2D>();
-        UserData.RegisterType<StaticBody2D>();
-        UserData.RegisterType<AnimatableBody2D>();
-        UserData.RegisterType<CollisionPolygon2D>();
-        UserData.RegisterType<CollisionShape2D>();
-        UserData.RegisterType<CpuParticles2D>();
-        UserData.RegisterType<GpuParticles2D>();
-        UserData.RegisterType<DampedSpringJoint2D>();
-        UserData.RegisterType<GrooveJoint2D>();
-        UserData.RegisterType<PinJoint2D>();
-        UserData.RegisterType<DirectionalLight2D>();
-        UserData.RegisterType<PointLight2D>();
-        UserData.RegisterType<LightOccluder2D>();
-        UserData.RegisterType<Line2D>();
-        UserData.RegisterType<Marker2D>();
-        UserData.RegisterType<MeshInstance2D>();
-        UserData.RegisterType<MultiMeshInstance2D>();
-        UserData.RegisterType<NavigationLink2D>();
-        UserData.RegisterType<NavigationObstacle2D>();
-        UserData.RegisterType<NavigationRegion2D>();
-        UserData.RegisterType<Parallax2D>();
-        UserData.RegisterType<ParallaxLayer>();
-        UserData.RegisterType<Path2D>();
-        UserData.RegisterType<PathFollow2D>();
-        UserData.RegisterType<Polygon2D>();
-        UserData.RegisterType<RayCast2D>();
-        UserData.RegisterType<RemoteTransform2D>();
-        UserData.RegisterType<ShapeCast2D>();
-        UserData.RegisterType<Skeleton2D>();
-        UserData.RegisterType<Sprite2D>();
-        UserData.RegisterType<TileMap>();
-        UserData.RegisterType<TileMapLayer>();
-        UserData.RegisterType<TouchScreenButton>();
-        UserData.RegisterType<VisibleOnScreenNotifier2D>();
-        UserData.RegisterType<VisibleOnScreenEnabler2D>();
-        UserData.RegisterType<Node3D>();
-        UserData.RegisterType<AudioListener3D>();
-        UserData.RegisterType<AudioStreamPlayer3D>();
-        UserData.RegisterType<BoneAttachment3D>();
-        UserData.RegisterType<Camera3D>();
-        UserData.RegisterType<XRCamera3D>();
-        UserData.RegisterType<Area3D>();
-        UserData.RegisterType<CharacterBody3D>();
-        UserData.RegisterType<PhysicalBone3D>();
-        UserData.RegisterType<RigidBody3D>();
-        UserData.RegisterType<VehicleBody3D>();
-        UserData.RegisterType<StaticBody3D>();
-        UserData.RegisterType<AnimatableBody3D>();
-        UserData.RegisterType<CollisionPolygon3D>();
-        UserData.RegisterType<CollisionShape3D>();
-        UserData.RegisterType<GridMap>();
-        UserData.RegisterType<ImporterMeshInstance3D>();
-        UserData.RegisterType<ConeTwistJoint3D>();
-        UserData.RegisterType<Generic6DofJoint3D>();
-        UserData.RegisterType<HingeJoint3D>();
-        UserData.RegisterType<PinJoint3D>();
-        UserData.RegisterType<SliderJoint3D>();
-        UserData.RegisterType<LightmapProbe>();
-        UserData.RegisterType<Marker3D>();
-        UserData.RegisterType<NavigationLink3D>();
-        UserData.RegisterType<NavigationObstacle3D>();
-        UserData.RegisterType<NavigationRegion3D>();
-        UserData.RegisterType<OpenXRCompositionLayerCylinder>();
-        UserData.RegisterType<OpenXRCompositionLayerEquirect>();
-        UserData.RegisterType<OpenXRCompositionLayerQuad>();
-        UserData.RegisterType<Path3D>();
-        UserData.RegisterType<PathFollow3D>();
-        UserData.RegisterType<RayCast3D>();
-        UserData.RegisterType<RemoteTransform3D>();
-        UserData.RegisterType<ShapeCast3D>();
-        UserData.RegisterType<Skeleton3D>();
-        UserData.RegisterType<SkeletonModifier3D>();
-        UserData.RegisterType<SpringArm3D>();
-        UserData.RegisterType<VehicleWheel3D>();
-        UserData.RegisterType<VisualInstance3D>();
-        UserData.RegisterType<Decal>();
-        UserData.RegisterType<FogVolume>();
-        UserData.RegisterType<GeometryInstance3D>();
-        UserData.RegisterType<CpuParticles3D>();
-        UserData.RegisterType<CsgCombiner3D>();
-        UserData.RegisterType<CsgBox3D>();
-        UserData.RegisterType<CsgCylinder3D>();
-        UserData.RegisterType<CsgMesh3D>();
-        UserData.RegisterType<CsgPolygon3D>();
-        UserData.RegisterType<CsgSphere3D>();
-        UserData.RegisterType<CsgTorus3D>();
-        UserData.RegisterType<GpuParticles3D>();
-        UserData.RegisterType<Label3D>();
-        UserData.RegisterType<MeshInstance3D>();
-        UserData.RegisterType<SoftBody3D>();
-        UserData.RegisterType<MultiMeshInstance3D>();
-        UserData.RegisterType<Sprite3D>();
-        UserData.RegisterType<AnimatedSprite3D>();
-        UserData.RegisterType<GpuParticlesAttractorBox3D>();
-        UserData.RegisterType<GpuParticlesAttractorSphere3D>();
-        UserData.RegisterType<GpuParticlesAttractorVectorField3D>();
-        UserData.RegisterType<GpuParticlesCollisionBox3D>();
-        UserData.RegisterType<GpuParticlesCollisionHeightField3D>();
-        UserData.RegisterType<GpuParticlesCollisionSdf3D>();
-        UserData.RegisterType<GpuParticlesCollisionSphere3D>();
-        UserData.RegisterType<Light3D>();
-        UserData.RegisterType<LightmapProbe>();
-        UserData.RegisterType<Marker3D>();
-        UserData.RegisterType<NavigationLink3D>();
-        UserData.RegisterType<NavigationObstacle3D>();
-        UserData.RegisterType<NavigationRegion3D>();
-        UserData.RegisterType<OpenXRCompositionLayerCylinder>();
-        UserData.RegisterType<OpenXRCompositionLayerEquirect>();
-        UserData.RegisterType<OpenXRCompositionLayerQuad>();
-        UserData.RegisterType<Path3D>();
-        UserData.RegisterType<PathFollow3D>();
-        UserData.RegisterType<RayCast3D>();
-        UserData.RegisterType<RemoteTransform3D>();
-        UserData.RegisterType<ShapeCast3D>();
-        UserData.RegisterType<Skeleton3D>();
-        UserData.RegisterType<SkeletonModifier3D>();
-        UserData.RegisterType<SpringArm3D>();
-        UserData.RegisterType<VehicleWheel3D>();
-        UserData.RegisterType<VisualInstance3D>();
-        UserData.RegisterType<Decal>();
-        UserData.RegisterType<FogVolume>();
-        UserData.RegisterType<GeometryInstance3D>();
-        UserData.RegisterType<CpuParticles3D>();
-        UserData.RegisterType<CsgCombiner3D>();
-        UserData.RegisterType<CsgBox3D>();
-        UserData.RegisterType<CsgCylinder3D>();
-        UserData.RegisterType<CsgMesh3D>();
-        UserData.RegisterType<CsgPolygon3D>();
-        UserData.RegisterType<CsgSphere3D>();
-        UserData.RegisterType<CsgTorus3D>();
-        UserData.RegisterType<GpuParticles3D>();
-        UserData.RegisterType<Label3D>();
-        UserData.RegisterType<MeshInstance3D>();
-        UserData.RegisterType<SoftBody3D>();
-        UserData.RegisterType<MultiMeshInstance3D>();
-        UserData.RegisterType<Sprite3D>();
-        UserData.RegisterType<AnimatedSprite3D>();
-        UserData.RegisterType<GpuParticlesAttractorBox3D>();
-        UserData.RegisterType<GpuParticlesAttractorSphere3D>();
-        UserData.RegisterType<GpuParticlesAttractorVectorField3D>();
-        UserData.RegisterType<GpuParticlesCollisionBox3D>();
-        UserData.RegisterType<GpuParticlesCollisionHeightField3D>();
-        UserData.RegisterType<GpuParticlesCollisionSdf3D>();
-        UserData.RegisterType<GpuParticlesCollisionSphere3D>();
-        UserData.RegisterType<Light3D>();
-        UserData.RegisterType<LightmapProbe>();
-        UserData.RegisterType<DirectionalLight3D>();
-        UserData.RegisterType<OmniLight3D>();
-        UserData.RegisterType<SpotLight3D>();
-        UserData.RegisterType<LightmapGI>();
-        UserData.RegisterType<OccluderInstance3D>();
-        UserData.RegisterType<ReflectionProbe>();
-        UserData.RegisterType<VisibleOnScreenNotifier3D>();
-        UserData.RegisterType<VisibleOnScreenEnabler3D>();
-        UserData.RegisterType<VoxelGI>();
-        UserData.RegisterType<XRFaceModifier3D>();
-        UserData.RegisterType<XRHandModifier3D>();
-        UserData.RegisterType<XRNode3D>();
-        UserData.RegisterType<XRController3D>();
-        UserData.RegisterType<XRAnchor3D>();
-        UserData.RegisterType<XROrigin3D>();
         
         GdCoreNamespace["Color"] = typeof(Color);
         GdCoreNamespace["Vector3"] = typeof(Vector3);
@@ -334,221 +89,77 @@ public class GodotModule : Module
         GdCoreNamespace["Quaternion"] = typeof(Quaternion);
         GdCoreNamespace["Aabb"] = typeof(Aabb);
         GdCoreNamespace["Node"] = typeof(Node);
-        GdCoreNamespace["AnimationPlayer"] = typeof(AnimationPlayer);
-        GdCoreNamespace["AnimationTree"] = typeof(AnimationTree);
-        GdCoreNamespace["AudioStreamPlayer"] = typeof(AudioStreamPlayer);
-        GdCoreNamespace["CanvasLayer"] = typeof(CanvasLayer);
-        GdCoreNamespace["ParallaxBackground"] = typeof(ParallaxBackground);
-        GdCoreNamespace["HttpRequest"] = typeof(HttpRequest);
-        GdCoreNamespace["NavigationAgent2D"] = typeof(NavigationAgent2D);
-        GdCoreNamespace["NavigationAgent3D"] = typeof(NavigationAgent3D);
-        GdCoreNamespace["ShaderGlobalsOverride"] = typeof(ShaderGlobalsOverride);
-        GdCoreNamespace["StatusIndicator"] = typeof(StatusIndicator);
-        GdCoreNamespace["Timer"] = typeof(Timer);
-        GdCoreNamespace["SubViewport"] = typeof(SubViewport);
-        GdCoreNamespace["Window"] = typeof(Window);
-        GdCoreNamespace["AcceptDialog"] = typeof(AcceptDialog);
-        GdCoreNamespace["ConfirmationDialog"] = typeof(ConfirmationDialog);
-        GdCoreNamespace["FileDialog"] = typeof(FileDialog);
-        GdCoreNamespace["Popup"] = typeof(Popup);
-        GdCoreNamespace["PopupMenu"] = typeof(PopupMenu);
-        GdCoreNamespace["PopupPanel"] = typeof(PopupPanel);
-        GdCoreNamespace["WorldEnvironment"] = typeof(WorldEnvironment);
-        GdCoreNamespace["Control"] = typeof(Control);
-        GdCoreNamespace["Button"] = typeof(Button);
-        GdCoreNamespace["CheckBox"] = typeof(CheckBox);
-        GdCoreNamespace["CheckButton"] = typeof(CheckButton);
-        GdCoreNamespace["ColorPickerButton"] = typeof(ColorPickerButton);
-        GdCoreNamespace["MenuButton"] = typeof(MenuButton);
-        GdCoreNamespace["OptionButton"] = typeof(OptionButton);
-        GdCoreNamespace["LinkButton"] = typeof(LinkButton);
-        GdCoreNamespace["TextureButton"] = typeof(TextureButton);
-        GdCoreNamespace["ColorRect"] = typeof(ColorRect);
-        GdCoreNamespace["Container"] = typeof(Container);
-        GdCoreNamespace["AspectRatioContainer"] = typeof(AspectRatioContainer);
-        GdCoreNamespace["BoxContainer"] = typeof(BoxContainer);
-        GdCoreNamespace["HBoxContainer"] = typeof(HBoxContainer);
-        GdCoreNamespace["VBoxContainer"] = typeof(VBoxContainer);
-        GdCoreNamespace["ColorPicker"] = typeof(ColorPicker);
-        GdCoreNamespace["CenterContainer"] = typeof(CenterContainer);
-        GdCoreNamespace["FlowContainer"] = typeof(FlowContainer);
-        GdCoreNamespace["HFlowContainer"] = typeof(HFlowContainer);
-        GdCoreNamespace["VFlowContainer"] = typeof(VFlowContainer);
-        GdCoreNamespace["GraphElement"] = typeof(GraphElement);
-        GdCoreNamespace["GridContainer"] = typeof(GridContainer);
-        GdCoreNamespace["MarginContainer"] = typeof(MarginContainer);
-        GdCoreNamespace["PanelContainer"] = typeof(PanelContainer);
-        GdCoreNamespace["ScrollContainer"] = typeof(ScrollContainer);
-        GdCoreNamespace["SplitContainer"] = typeof(SplitContainer);
-        GdCoreNamespace["HSplitContainer"] = typeof(HSplitContainer);
-        GdCoreNamespace["VSplitContainer"] = typeof(VSplitContainer);
-        GdCoreNamespace["SubViewportContainer"] = typeof(SubViewportContainer);
-        GdCoreNamespace["TabContainer"] = typeof(TabContainer);
-        GdCoreNamespace["GraphEdit"] = typeof(GraphEdit);
-        GdCoreNamespace["ItemList"] = typeof(ItemList);
-        GdCoreNamespace["Label"] = typeof(Label);
-        GdCoreNamespace["LineEdit"] = typeof(LineEdit);
-        GdCoreNamespace["MenuBar"] = typeof(MenuBar);
-        GdCoreNamespace["NinePatchRect"] = typeof(NinePatchRect);
-        GdCoreNamespace["Panel"] = typeof(Panel);
-        GdCoreNamespace["ReferenceRect"] = typeof(ReferenceRect);
-        GdCoreNamespace["RichTextLabel"] = typeof(RichTextLabel);
-        GdCoreNamespace["Range"] = typeof(Godot.Range);
-        GdCoreNamespace["ProgressBar"] = typeof(ProgressBar);
-        GdCoreNamespace["HScrollBar"] = typeof(HScrollBar);
-        GdCoreNamespace["VScrollBar"] = typeof(VScrollBar);
-        GdCoreNamespace["HSlider"] = typeof(HSlider);
-        GdCoreNamespace["VSlider"] = typeof(VSlider);
-        GdCoreNamespace["SpinBox"] = typeof(SpinBox);
-        GdCoreNamespace["TextureProgressBar"] = typeof(TextureProgressBar);
-        GdCoreNamespace["HSeparator"] = typeof(HSeparator);
-        GdCoreNamespace["VSeparator"] = typeof(VSeparator);
-        GdCoreNamespace["TabBar"] = typeof(TabBar);
-        GdCoreNamespace["TextureRect"] = typeof(TextureRect);
-        GdCoreNamespace["Tree"] = typeof(Tree);
-        GdCoreNamespace["VideoStreamPlayer"] = typeof(VideoStreamPlayer);
-        GdCoreNamespace["Node2D"] = typeof(Node2D);
-        GdCoreNamespace["AnimatedSprite2D"] = typeof(AnimatedSprite2D);
-        GdCoreNamespace["AudioListener2D"] = typeof(AudioListener2D);
-        GdCoreNamespace["AudioStreamPlayer2D"] = typeof(AudioStreamPlayer2D);
-        GdCoreNamespace["BackBufferCopy"] = typeof(BackBufferCopy);
-        GdCoreNamespace["Bone2D"] = typeof(Bone2D);
-        GdCoreNamespace["Camera2D"] = typeof(Camera2D);
-        GdCoreNamespace["CanvasGroup"] = typeof(CanvasGroup);
-        GdCoreNamespace["CanvasModulate"] = typeof(CanvasModulate);
-        GdCoreNamespace["Area2D"] = typeof(Area2D);
-        GdCoreNamespace["CharacterBody2D"] = typeof(CharacterBody2D);
-        GdCoreNamespace["RigidBody2D"] = typeof(RigidBody2D);
-        GdCoreNamespace["PhysicalBone2D"] = typeof(PhysicalBone2D);
-        GdCoreNamespace["StaticBody2D"] = typeof(StaticBody2D);
-        GdCoreNamespace["AnimatableBody2D"] = typeof(AnimatableBody2D);
-        GdCoreNamespace["CollisionPolygon2D"] = typeof(CollisionPolygon2D);
-        GdCoreNamespace["CollisionShape2D"] = typeof(CollisionShape2D);
-        GdCoreNamespace["CpuParticles2D"] = typeof(CpuParticles2D);
-        GdCoreNamespace["GpuParticles2D"] = typeof(GpuParticles2D);
-        GdCoreNamespace["DampedSpringJoint2D"] = typeof(DampedSpringJoint2D);
-        GdCoreNamespace["GrooveJoint2D"] = typeof(GrooveJoint2D);
-        GdCoreNamespace["PinJoint2D"] = typeof(PinJoint2D);
-        GdCoreNamespace["DirectionalLight2D"] = typeof(DirectionalLight2D);
-        GdCoreNamespace["PointLight2D"] = typeof(PointLight2D);
-        GdCoreNamespace["LightOccluder2D"] = typeof(LightOccluder2D);
-        GdCoreNamespace["Line2D"] = typeof(Line2D);
-        GdCoreNamespace["Marker2D"] = typeof(Marker2D);
-        GdCoreNamespace["MeshInstance2D"] = typeof(MeshInstance2D);
-        GdCoreNamespace["MultiMeshInstance2D"] = typeof(MultiMeshInstance2D);
-        GdCoreNamespace["NavigationLink2D"] = typeof(NavigationLink2D);
-        GdCoreNamespace["NavigationObstacle2D"] = typeof(NavigationObstacle2D);
-        GdCoreNamespace["NavigationRegion2D"] = typeof(NavigationRegion2D);
-        GdCoreNamespace["Parallax2D"] = typeof(Parallax2D);
-        GdCoreNamespace["ParallaxLayer"] = typeof(ParallaxLayer);
-        GdCoreNamespace["Path2D"] = typeof(Path2D);
-        GdCoreNamespace["PathFollow2D"] = typeof(PathFollow2D);
-        GdCoreNamespace["Polygon2D"] = typeof(Polygon2D);
-        GdCoreNamespace["RayCast2D"] = typeof(RayCast2D);
-        GdCoreNamespace["RemoteTransform2D"] = typeof(RemoteTransform2D);
-        GdCoreNamespace["ShapeCast2D"] = typeof(ShapeCast2D);
-        GdCoreNamespace["Skeleton2D"] = typeof(Skeleton2D);
-        GdCoreNamespace["Sprite2D"] = typeof(Sprite2D);
-        GdCoreNamespace["TileMap"] = typeof(TileMap);
-        GdCoreNamespace["TileMapLayer"] = typeof(TileMapLayer);
-        GdCoreNamespace["TouchScreenButton"] = typeof(TouchScreenButton);
-        GdCoreNamespace["VisibleOnScreenNotifier2D"] = typeof(VisibleOnScreenNotifier2D);
-        GdCoreNamespace["VisibleOnScreenEnabler2D"] = typeof(VisibleOnScreenEnabler2D);
-        GdCoreNamespace["Node3D"] = typeof(Node3D);
-        GdCoreNamespace["AudioListener3D"] = typeof(AudioListener3D);
-        GdCoreNamespace["AudioStreamPlayer3D"] = typeof(AudioStreamPlayer3D);
-        GdCoreNamespace["BoneAttachment3D"] = typeof(BoneAttachment3D);
-        GdCoreNamespace["Camera3D"] = typeof(Camera3D);
-        GdCoreNamespace["XRCamera3D"] = typeof(XRCamera3D);
-        GdCoreNamespace["Area3D"] = typeof(Area3D);
-        GdCoreNamespace["CharacterBody3D"] = typeof(CharacterBody3D);
-        GdCoreNamespace["PhysicalBone3D"] = typeof(PhysicalBone3D);
-        GdCoreNamespace["RigidBody3D"] = typeof(RigidBody3D);
-        GdCoreNamespace["VehicleBody3D"] = typeof(VehicleBody3D);
-        GdCoreNamespace["StaticBody3D"] = typeof(StaticBody3D);
-        GdCoreNamespace["AnimatableBody3D"] = typeof(AnimatableBody3D);
-        GdCoreNamespace["CollisionPolygon3D"] = typeof(CollisionPolygon3D);
-        GdCoreNamespace["CollisionShape3D"] = typeof(CollisionShape3D);
-        GdCoreNamespace["GridMap"] = typeof(GridMap);
-        GdCoreNamespace["ImporterMeshInstance3D"] = typeof(ImporterMeshInstance3D);
-        GdCoreNamespace["ConeTwistJoint3D"] = typeof(ConeTwistJoint3D);
-        GdCoreNamespace["Generic6DofJoint3D"] = typeof(Generic6DofJoint3D);
-        GdCoreNamespace["HingeJoint3D"] = typeof(HingeJoint3D);
-        GdCoreNamespace["PinJoint3D"] = typeof(PinJoint3D);
-        GdCoreNamespace["SliderJoint3D"] = typeof(SliderJoint3D);
-        GdCoreNamespace["LightmapProbe"] = typeof(LightmapProbe);
-        GdCoreNamespace["Marker3D"] = typeof(Marker3D);
-        GdCoreNamespace["NavigationLink3D"] = typeof(NavigationLink3D);
-        GdCoreNamespace["NavigationObstacle3D"] = typeof(NavigationObstacle3D);
-        GdCoreNamespace["NavigationRegion3D"] = typeof(NavigationRegion3D);
-        GdCoreNamespace["OpenXRCompositionLayerCylinder"] = typeof(OpenXRCompositionLayerCylinder);
-        GdCoreNamespace["OpenXRCompositionLayerEquirect"] = typeof(OpenXRCompositionLayerEquirect);
-        GdCoreNamespace["OpenXRCompositionLayerQuad"] = typeof(OpenXRCompositionLayerQuad);
-        GdCoreNamespace["Path3D"] = typeof(Path3D);
-        GdCoreNamespace["PathFollow3D"] = typeof(PathFollow3D);
-        GdCoreNamespace["RayCast3D"] = typeof(RayCast3D);
-        GdCoreNamespace["RemoteTransform3D"] = typeof(RemoteTransform3D);
-        GdCoreNamespace["ShapeCast3D"] = typeof(ShapeCast3D);
-        GdCoreNamespace["Skeleton3D"] = typeof(Skeleton3D);
-        GdCoreNamespace["SkeletonModifier3D"] = typeof(SkeletonModifier3D);
-        GdCoreNamespace["SpringArm3D"] = typeof(SpringArm3D);
-        GdCoreNamespace["VehicleWheel3D"] = typeof(VehicleWheel3D);
-        GdCoreNamespace["VisualInstance3D"] = typeof(VisualInstance3D);
-        GdCoreNamespace["Decal"] = typeof(Decal);
-        GdCoreNamespace["FogVolume"] = typeof(FogVolume);
-        GdCoreNamespace["GeometryInstance3D"] = typeof(GeometryInstance3D);
-        GdCoreNamespace["CpuParticles3D"] = typeof(CpuParticles3D);
-        GdCoreNamespace["CsgCombiner3D"] = typeof(CsgCombiner3D);
-        GdCoreNamespace["CsgBox3D"] = typeof(CsgBox3D);
-        GdCoreNamespace["CsgCylinder3D"] = typeof(CsgCylinder3D);
-        GdCoreNamespace["CsgMesh3D"] = typeof(CsgMesh3D);
-        GdCoreNamespace["CsgPolygon3D"] = typeof(CsgPolygon3D);
-        GdCoreNamespace["CsgSphere3D"] = typeof(CsgSphere3D);
-        GdCoreNamespace["CsgTorus3D"] = typeof(CsgTorus3D);
-        GdCoreNamespace["GpuParticles3D"] = typeof(GpuParticles3D);
-        GdCoreNamespace["Label3D"] = typeof(Label3D);
-        GdCoreNamespace["MeshInstance3D"] = typeof(MeshInstance3D);
-        GdCoreNamespace["SoftBody3D"] = typeof(SoftBody3D);
-        GdCoreNamespace["MultiMeshInstance3D"] = typeof(MultiMeshInstance3D);
-        GdCoreNamespace["Sprite3D"] = typeof(Sprite3D);
-        GdCoreNamespace["AnimatedSprite3D"] = typeof(AnimatedSprite3D);
-        GdCoreNamespace["GpuParticlesAttractorBox3D"] = typeof(GpuParticlesAttractorBox3D);
-        GdCoreNamespace["GpuParticlesAttractorSphere3D"] = typeof(GpuParticlesAttractorSphere3D);
-        GdCoreNamespace["GpuParticlesAttractorVectorField3D"] = typeof(GpuParticlesAttractorVectorField3D);
-        GdCoreNamespace["GpuParticlesCollisionBox3D"] = typeof(GpuParticlesCollisionBox3D);
-        GdCoreNamespace["GpuParticlesCollisionHeightField3D"] = typeof(GpuParticlesCollisionHeightField3D);
-        GdCoreNamespace["GpuParticlesCollisionSdf3D"] = typeof(GpuParticlesCollisionSdf3D);
-        GdCoreNamespace["GpuParticlesCollisionSphere3D"] = typeof(GpuParticlesCollisionSphere3D);
-        GdCoreNamespace["Light3D"] = typeof(Light3D);
-        GdCoreNamespace["LightmapProbe"] = typeof(LightmapProbe);
-        GdCoreNamespace["DirectionalLight3D"] = typeof(DirectionalLight3D);
-        GdCoreNamespace["OmniLight3D"] = typeof(OmniLight3D);
-        GdCoreNamespace["SpotLight3D"] = typeof(SpotLight3D);
-        GdCoreNamespace["LightmapGI"] = typeof(LightmapGI);
-        GdCoreNamespace["OccluderInstance3D"] = typeof(OccluderInstance3D);
-        GdCoreNamespace["ReflectionProbe"] = typeof(ReflectionProbe);
-        GdCoreNamespace["VisibleOnScreenNotifier3D"] = typeof(VisibleOnScreenNotifier3D);
-        GdCoreNamespace["VisibleOnScreenEnabler3D"] = typeof(VisibleOnScreenEnabler3D);
-        GdCoreNamespace["VoxelGI"] = typeof(VoxelGI);
-        GdCoreNamespace["XRFaceModifier3D"] = typeof(XRFaceModifier3D);
-        GdCoreNamespace["XRHandModifier3D"] = typeof(XRHandModifier3D);
-        GdCoreNamespace["XRNode3D"] = typeof(XRNode3D);
-        GdCoreNamespace["XRController3D"] = typeof(XRController3D);
-        GdCoreNamespace["XRAnchor3D"] = typeof(XRAnchor3D);
-        GdCoreNamespace["XROrigin3D"] = typeof(XROrigin3D);
 
-        foreach (var VARIABLE in GetTypesInheritedFrom(typeof(RefCounted)))
+        foreach (var type in GetTypesInheritedFrom(typeof(Node)))
         {
-            
+            if (!IsBlackListedType(type) || LuaEnviroment.Sandboxed == false)
+            {
+                UserData.RegisterType(type);
+                GdCoreNamespace[type.Name] = type;
+            }
         }
+        
+        foreach (var type in GetTypesInheritedFrom(typeof(RefCounted)))
+        {
+            if (!IsBlackListedType(type) || LuaEnviroment.Sandboxed == false)
+            {
+                UserData.RegisterType(type);
+                GdCoreNamespace[type.Name] = type;
+            }
+        }
+        
+        Type[] enumTypes = GetEnumTypesFromNamespace("Godot");
+        foreach (Type type in enumTypes)
+        {
+            // hack fix to stop the .NET debugger from bitching.
+            bool isNested = type.IsNested;
+                        
+            if (!isNested)
+            {
+                UserData.RegisterType(type);
+                GdCoreNamespace[type.Name] = type;
+            }
+        }
+        
+        
     }
     
-    public static Type[] GetTypesInheritedFrom(Type baseType)
+    public Type[] GetTypesInheritedFrom(Type baseType)
     {
         Assembly assembly = baseType.Assembly;
         Type[] types = assembly.GetTypes();
         Type[] inheritedTypes = types.Where(t => t.IsSubclassOf(baseType)).ToArray();
         return inheritedTypes;
+    }
+    
+    public Type[] GetEnumTypesFromAssembly(Assembly assembly)
+    {
+        List<Type> types = new List<Type>();
+        foreach (var t in assembly.GetTypes())
+        {
+            if (t.IsEnum)
+            {
+                types.Add(t);
+            }
+        }
+        return types.ToArray();
+    }
+    
+    public static Type[] GetEnumTypesFromNamespace(string @namespace)
+    {
+        List<Type> types = new List<Type>();
+        foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+        {
+            foreach (var type in asm.GetTypes())
+            {
+                if (type.Namespace == @namespace && type.IsEnum)
+                {
+                    types.Add(type);
+                }
+            }
+        }
+
+        return types.ToArray();
     }
     
     public Type[] GetBlackListedTypes()
@@ -560,7 +171,7 @@ public class GodotModule : Module
             typeof(CSharpScript),
             typeof(GodotScript),
             typeof(DirAccess),
-            typeof(ENetConnection),
+            typeof(ENetConnection)
             ,
         };
     }
