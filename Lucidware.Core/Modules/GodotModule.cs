@@ -8,9 +8,7 @@ namespace Lucidware.Core.Modules;
 
 public class GodotModule : Module
 {
-    public GodotModule(LuaEnviroment luaEnviroment) : base(luaEnviroment)
-    {
-    }
+    public GodotModule(LuaEnviroment luaEnviroment) : base(luaEnviroment) { }
     
     public override void Init()
     {
