@@ -11,5 +11,5 @@ local ioCoreMulti = sys.IoCoreMulti()
 sayHello("mintkat")
 
 while true do
-    number = number + 0.001  
+    number = number + 0.001
 end

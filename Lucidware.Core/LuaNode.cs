@@ -1,4 +1,5 @@
 using Godot;
+using Lucidware.Core.Modules;
 
 namespace Lucidware.Core;
 
@@ -11,6 +12,8 @@ public partial class LuaNode : Node
     public LuaNode()
     {
         _luaEnviroment = new LuaEnviroment();
+        _luaEnviroment.AddModule(typeof(GodotModule));
+        _luaEnviroment.Script.Globals["rootNode"] = this;
     }
     
     public void StartFromPath(string path)
