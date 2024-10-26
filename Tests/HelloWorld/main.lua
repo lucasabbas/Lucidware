@@ -10,6 +10,9 @@ local ioCoreMulti = sys.IoCoreMulti()
 
 sayHello("mintkat")
 
-while true do
+function update(deltaTime)
+    print("update", deltaTime)
     number = number + 0.001
 end
+
+update(0)

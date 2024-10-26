@@ -27,12 +27,14 @@ public partial class SimpleRuntimeNode : Node
     public void StartFromPath(string path)
     {
         LuaNode = new LuaNode();
+        AddChild(LuaNode);
         LuaNode.StartFromPath(path);
     }
 
     public void StartFromZipFile(String path)
     {
         LuaNode = new LuaNode();
+        AddChild(LuaNode);
         LuaNode.StartFromZipFile(path);
     }
 }

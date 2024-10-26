@@ -1,5 +1,6 @@
 using Godot;
 using Lucidware.Core.Modules;
+using MoonSharp.Interpreter;
 
 namespace Lucidware.Core;
 
@@ -9,6 +10,7 @@ public partial class LuaNode : Node
     
     private String _mainScriptPath = "app://main.lua";
     
+    /*
     [Signal] public delegate void MainEventHandler();
     [Signal] public delegate void UpdateEventHandler(float delta);
     [Signal] public delegate void PhysicsUpdateEventHandler(float delta);
@@ -17,11 +19,13 @@ public partial class LuaNode : Node
     [Signal] public delegate void ShortcutInputEventHandler(InputEvent @event);
     [Signal] public delegate void UnhandledKeyInputEventHandler(InputEvent @event);
     [Signal] public delegate void StopEventHandler();
+     */
     
     public LuaNode()
     {
         _luaEnviroment = new LuaEnviroment();
         _luaEnviroment.AddModule(typeof(GodotModule));
+        UserData.RegisterType<LuaNode>();
         _luaEnviroment.Script.Globals["rootNode"] = this;
     }
     
@@ -53,37 +57,64 @@ public partial class LuaNode : Node
     
     public override void _Process(double delta)
     {
-        EmitSignal(SignalName.Update, DoubleToFloat(delta));
+        if (_luaEnviroment.Script.Globals["update"] != null)
+        {
+            var update = _luaEnviroment.Script.Globals["update"];
+            _luaEnviroment.Script.Call(update, DoubleToFloat(delta));
+        }
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        EmitSignal(SignalName.PhysicsUpdate, DoubleToFloat(delta));
+        if (_luaEnviroment.Script.Globals["physicsUpdate"] != null)
+        {
+            var physicsUpdate = _luaEnviroment.Script.Globals["physicsUpdate"];
+            _luaEnviroment.Script.Call(physicsUpdate, DoubleToFloat(delta));
+        }
     }
 
     public override void _Input(InputEvent @event)
     {
-
-        EmitSignal(SignalName.Input, @event);
+        if (_luaEnviroment.Script.Globals["input"] != null)
+        {
+            var input = _luaEnviroment.Script.Globals["input"];
+            _luaEnviroment.Script.Call(input, @event);
+        }
     }
 
     public override void _UnhandledInput(InputEvent @event)
     {
-        EmitSignal(SignalName.UnhandledInput, @event);
+        if (_luaEnviroment.Script.Globals["unhandledInput"] != null)
+        {
+            var unhandledInput = _luaEnviroment.Script.Globals["unhandledInput"];
+            _luaEnviroment.Script.Call(unhandledInput, @event);
+        }
     }
 
     public override void _ShortcutInput(InputEvent @event)
     {
-        EmitSignal(SignalName.ShortcutInput, @event);
+        if (_luaEnviroment.Script.Globals["shortcutInput"] != null)
+        {
+            var shortcutInput = _luaEnviroment.Script.Globals["shortcutInput"];
+            _luaEnviroment.Script.Call(shortcutInput, @event);
+        }
     }
 
     public override void _UnhandledKeyInput(InputEvent @event)
     {
-        EmitSignal(SignalName.UnhandledKeyInput, @event);
+        if (_luaEnviroment.Script.Globals["unhandledKeyInput"] != null)
+        {
+            var unhandledKeyInput = _luaEnviroment.Script.Globals["unhandledKeyInput"];
+            _luaEnviroment.Script.Call(unhandledKeyInput, @event);
+        }
     }
 
     public override void _ExitTree()
     {
-        EmitSignal(SignalName.Stop);
+        if (_luaEnviroment.Script.Globals["stop"] != null)
+        {
+            var stop = _luaEnviroment.Script.Globals["stop"];
+            _luaEnviroment.Script.Call(stop);
+        }
     }
 }
