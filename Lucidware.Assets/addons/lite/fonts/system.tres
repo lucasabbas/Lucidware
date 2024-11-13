@@ -1,0 +1,7 @@
+[gd_resource type="SystemFont" load_steps=2 format=3 uid="uid://bm2qptywwnt6s"]
+
+[ext_resource type="FontFile" uid="uid://b8cnc178xy5j" path="res://addons/lite/fonts/bootstrap-icons.woff2" id="1_13i53"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("1_13i53")])
+font_names = PackedStringArray("Tahoma", "DejaVu Sans", "Sans-Serif")

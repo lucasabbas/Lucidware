@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://1luchjj6yut5"]
+
+[ext_resource type="Script" path="res://native_dialogs.gd" id="1_q2pgy"]
+
+[node name="NativeDialogs" type="Node"]
+script = ExtResource("1_q2pgy")

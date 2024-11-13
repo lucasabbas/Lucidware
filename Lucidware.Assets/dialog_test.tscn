@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4kodffe1tbd3"]
+
+[sub_resource type="GDScript" id="GDScript_kvo1p"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var ndscene : PackedScene = load(\"res://native_dialogs.tscn\")
+	var nd = ndscene.instantiate()
+	add_child(nd)
+	
+	var dialog_id : int
+	
+	nd.dialog_confirmed.connect(func (id : int) :
+		print(\"Dialog Confirmed\")
+		print(\"Dialog ID : \" + var_to_str(id))
+		print(var_to_str(dialog_id == id))
+	)
+	
+	nd.dialog_canceled.connect(func (id : int) :
+		print(\"Dialog Canceled\")
+		print(\"Dialog ID : \" + var_to_str(id))
+		print(var_to_str(dialog_id == id))
+	)
+	
+	dialog_id = nd.push_accept_info(\"Hello World\")
+	dialog_id = nd.push_accept_question(\"Question Test\")
+	dialog_id = nd.push_accept_error(\"an error haz occured\")
+	dialog_id = nd.push_accept_warning(\"O_O\")
+	
+	dialog_id = nd.push_confirmation(\"Ok or Cancel\", \"Question 1\", 0)
+	dialog_id = nd.push_confirmation(\"Yes or No\", \"Question 1\", 1)
+	
+	nd.notify_info(\"Info test\")
+	nd.notify_warning(\"Warning test\")
+	nd.notify_error(\"Error test\")
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Dialogtest" type="Node"]
+script = SubResource("GDScript_kvo1p")
