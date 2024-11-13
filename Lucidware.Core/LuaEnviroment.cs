@@ -59,7 +59,6 @@ public class LuaEnviroment
         EnviromentVariables["PLATFORM_VERSION"] = "1.0.0";
 
         EnviromentVariables["OS_NAME"] = OS.GetName();
-        Script.Globals["link"] = (Action<DynValue, object, string>)LinkFunctionToDelegate;
         
         AddModule(typeof(Sys));
     }
@@ -90,17 +89,6 @@ public class LuaEnviroment
     public void LoadScript(string path)
     {
         
-    }
-    
-    public void LinkFunctionToDelegate(DynValue functionObj, object obj, string methodName)
-    {
-        var method = obj.GetType().GetMethod(methodName);
-        if (method == null)
-        {
-            throw new Exception($"Method {methodName} not found in object {obj}");
-        }
-        
-        var function = functionObj.ToObject(method.GetParameters()[0].ParameterType);
     }
 
     public void Exit(int exitCode)

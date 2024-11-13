@@ -26,6 +26,7 @@ public partial class LuaNode : Node
         _luaEnviroment = new LuaEnviroment();
         _luaEnviroment.AddModule(typeof(GodotModule));
         _luaEnviroment.AddModule(typeof(GodotExtensions));
+        _luaEnviroment.AddModule(typeof(UiModule));
         UserData.RegisterType<LuaNode>();
         _luaEnviroment.Script.Globals["rootNode"] = this;
     }
