@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfd5743e-75a8-457e-b405-f5cf9473efa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Lucidware.Core/Modules/UiModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LucidKit/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lucidware.Core/LuaEnviroment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lucidware.Core/LuaEnviroment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lucidware.Core/LuaNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lucidware.Core/LuaNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/UiTest/main.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UiTest/main.lua" afterDir="false" />
+    <list default="true" id="cfd5743e-75a8-457e-b405-f5cf9473efa5" name="Changes" comment="Added UiTest">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/UiTest/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UiTest/test.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +45,7 @@
   "keyToString": {
     ".NET Executable.Player.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.23795621",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -112,8 +107,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731482564797</updated>
-      <workItem from="1731482567197" duration="2542000" />
+      <workItem from="1731482567197" duration="3484000" />
     </task>
+    <task id="LOCAL-00001" summary="Added UiTest">
+      <option name="closed" value="true" />
+      <created>1731485168360</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731485168360</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,5 +138,416 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Added UiTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added UiTest" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>320</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="10658" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10706" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>321</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="10719" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10720" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>322</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="10737" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10785" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>323</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="10802" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10803" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>324</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="10824" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10870" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>325</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="10891" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10892" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>326</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="10917" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10967" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>327</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="10992" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11046" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>328</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11067" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11068" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>329</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11085" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11086" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>330</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11099" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11100" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>331</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11118" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11166" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>332</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11179" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11180" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>333</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11197" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11279" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>334</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11292" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11293" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>335</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11311" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11359" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>336</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11372" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11373" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>337</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11390" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11472" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>338</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11485" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11486" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>339</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11504" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11549" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>340</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11562" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11563" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>341</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11580" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11642" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>342</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11655" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11656" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>343</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11674" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11718" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>344</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11731" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11732" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>346</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11816" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11817" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>347</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11835" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11879" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>348</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11892" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11893" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>349</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="11910" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12003" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>350</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="12016" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12017" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lucidware.Core/UiDocument.cs</url>
+          <line>351</line>
+          <properties documentPath="C:\Users\mintkat\Lucidware\Lucidware.Core\UiDocument.cs" containingFunctionPresentation="Method 'SetStyles'">
+            <startOffsets>
+              <option value="12026" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12027" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

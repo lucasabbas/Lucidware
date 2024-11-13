@@ -2,7 +2,7 @@
 <!-- Sunaba User interface Markup Language -->
 <SUML FullScreen="true">
     <Head>
-        <Document Type="StyleSheet" Path="app://style.sbss"></Document>
+        <Document Type="StyleSheet" Path="app://style.sbss"/>
         <Script>
             console.log(document.globals["hw"]);
             console.log(document.globals["vec3"]);
