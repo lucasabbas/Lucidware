@@ -118,4 +118,9 @@ public partial class LuaNode : Node
             _luaEnviroment.Script.Call(stop);
         }
     }
+    
+    public void ConnectSignal(Node node, Table table, string signalName, string functionName)
+    {
+        node.Connect(signalName, new Callable());
+    }
 }

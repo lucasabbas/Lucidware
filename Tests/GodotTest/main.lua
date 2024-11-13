@@ -1,3 +1,4 @@
+
 local vec3 = godot.Vector3.__new(5, 3, 2)
 print(vec3)
 

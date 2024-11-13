@@ -1,0 +1,6 @@
+﻿{
+    "Topbar" : {
+        "Type" : "StyleBoxTexture",
+        "Texture": "app://banner.png"
+    }
+}

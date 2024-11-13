@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Sunaba User interface Markup Language -->
+<SUML FullScreen="true">
+    <Head>
+        <Document Type="StyleSheet" Path="app://style.sbss"></Document>
+        <Script>
+            console.log(document.globals["hw"]);
+            console.log(document.globals["vec3"]);
+
+            const label = document.getObject("Panel/VBoxContainer/Control/Label");
+            const button = document.getObject("Panel/VBoxContainer/Control/Button");
+
+            let counter = 0;
+
+            button.add_Pressed(function() {
+            counter++;
+            label.text = "You clicked me " + counter + " times!";
+            });
+
+            /*
+            RootNode.add_Update(function(deltaTime) {
+            console.log("Update: " + deltaTime);
+            });
+            */
+        </Script>
+    </Head>
+    <Body>
+        <Panel
+                Name="Panel"
+                AnchorTop="$FILL_TOP_LEFT"
+                AnchorBottom="$FILL_BOTTOM_RIGHT"
+                AnchorLeft="$FILL_TOP_LEFT"
+                AnchorRight="$FILL_BOTTOM_RIGHT">
+            <VBoxContainer
+                    Name="VBoxContainer"
+                    AnchorTop="$FILL_TOP_LEFT"
+                    AnchorBottom="$FILL_BOTTOM_RIGHT"
+                    AnchorLeft="$FILL_TOP_LEFT"
+                    AnchorRight="$FILL_BOTTOM_RIGHT">
+                <Panel
+                        Name="Topbar"
+                        Panel="Topbar"
+                        AnchorTop="1"
+                        AnchorBottom="$FILL_TOP_LEFT"
+                        OffsetTop="0"
+                        OffsetBottom="60"
+                        CustomMinimumSize="0,60">
+                </Panel>
+                <Control
+                        Name="Control"
+                        AnchorLeft="$FILL_TOP_LEFT"
+                        AnchorRight="$FILL_BOTTOM_RIGHT"
+                        SizeFlagsVertical="ExpandFill">
+                    <Label
+                            Name="Label"
+                            AnchorTop="0.5"
+                            AnchorBottom="1"
+                            AnchorLeft="0.5"
+                            AnchorRight="1"
+                            OffsetTop="-75"
+                            OffsetBottom="0"
+                            OffsetLeft="-85"
+                            OffsetRight="0"
+                            Text="You clicked me 0 times!">
+                    </Label>
+                    <Button
+                            Name="Button"
+                            AnchorTop="0.5"
+                            AnchorBottom="0.5"
+                            AnchorLeft="0.5"
+                            AnchorRight="0.5"
+                            OffsetTop="-50"
+                            OffsetBottom="-40"
+                            OffsetLeft="-40"
+                            OffsetRight="0"
+                            Text="Click me!">
+                    </Button>
+                </Control>
+            </VBoxContainer>
+        </Panel>
+    </Body>
+</SUML>
