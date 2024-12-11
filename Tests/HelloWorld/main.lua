@@ -54,4 +54,11 @@ function update(deltaTime)
     number = number + 0.001
 end
 
+local gv3_1 = godot.Vector3.__new(1, 2, 3);
+local gv3_2 = godot.Vector3.__new(3, 2, 1);
+
+local gv3_combined = gv3_1 + gv3_2;
+
+print(gv3_combined)
+
 update(0)

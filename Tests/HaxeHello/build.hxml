@@ -1,0 +1,4 @@
+--class-path src
+--main Main
+--lua main.lua
+-D lua-vanilla

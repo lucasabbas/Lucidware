@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cfd5743e-75a8-457e-b405-f5cf9473efa5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lucidware.Runtime/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/Lucidware.Runtime/project.godot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/HelloWorld/main.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/HelloWorld/main.lua" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +27,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:lucidium4/Lucidware.git&quot;,
-    &quot;accountId&quot;: &quot;2727a9ab-7118-4c63-b5b7-f4e13c4b1477&quot;
+    &quot;url&quot;: &quot;git@github.com:lucasabbas/Lucidware.git&quot;,
+    &quot;accountId&quot;: &quot;7e33c820-2666-4203-b6e2-eb6d0d3c0c63&quot;
   }
 }</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -41,24 +41,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Executable.Player.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "XThreadsFramesViewSplitterKey": "0.23795621",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "/home/mintkat/Lucidware",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Executable.Player.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.23795621&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mintkat/Lucidware&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Executable.Player">
     <configuration name="Player GDScript" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory" show_console_on_std_err="false" show_console_on_std_out="false" port="6006">
       <option name="address" value="127.0.0.1" />
@@ -85,8 +85,8 @@
     </configuration>
     <configuration name="Player" type="RunExe" factoryName=".NET Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../../Program Files/Godot Engine dotNET/godot_mono.exe" />
-      <option name="PROGRAM_PARAMETERS" value="--path &quot;Lucidware.Runtime&quot; --dirpath=$PROJECT_DIR$/Tests/UiTest" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\lucas\Lucidware" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;Lucidware.Runtime&quot; --dirpath=$PROJECT_DIR$/Tests/HelloWorld/" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -113,6 +113,10 @@
       <workItem from="1731482567197" duration="3484000" />
       <workItem from="1731461698503" duration="744000" />
       <workItem from="1733267133959" duration="1091000" />
+      <workItem from="1733648490404" duration="227000" />
+      <workItem from="1733686297077" duration="2736000" />
+      <workItem from="1733733139080" duration="1344000" />
+      <workItem from="1733891193002" duration="4820000" />
     </task>
     <task id="LOCAL-00001" summary="Added UiTest">
       <option name="closed" value="true" />
@@ -122,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731485168360</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added lite assets">
+      <option name="closed" value="true" />
+      <created>1733648607846</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733648607846</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +156,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added UiTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added UiTest" />
+    <MESSAGE value="added lite assets" />
+    <option name="LAST_COMMIT_MESSAGE" value="added lite assets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
