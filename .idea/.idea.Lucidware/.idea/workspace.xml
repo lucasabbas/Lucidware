@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cfd5743e-75a8-457e-b405-f5cf9473efa5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/HelloWorld/main.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/HelloWorld/main.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/HaxeHello/main.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/HaxeHello/main.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/HaxeHello/src/Main.hx" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/HaxeHello/src/Main.hx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/HaxeHello/src/core/InstanceObject.hx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/HaxeHello/src/core/NativeObject.hx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/HaxeHello/src/godot/Vector3.hx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +89,7 @@
     </configuration>
     <configuration name="Player" type="RunExe" factoryName=".NET Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../../Program Files/Godot Engine dotNET/godot_mono.exe" />
-      <option name="PROGRAM_PARAMETERS" value="--path &quot;Lucidware.Runtime&quot; --dirpath=$PROJECT_DIR$/Tests/HelloWorld/" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;Lucidware.Runtime&quot; --dirpath=$PROJECT_DIR$/Tests/HaxeHello/" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -117,6 +121,7 @@
       <workItem from="1733686297077" duration="2736000" />
       <workItem from="1733733139080" duration="1344000" />
       <workItem from="1733891193002" duration="4820000" />
+      <workItem from="1733947571998" duration="846000" />
     </task>
     <task id="LOCAL-00001" summary="Added UiTest">
       <option name="closed" value="true" />

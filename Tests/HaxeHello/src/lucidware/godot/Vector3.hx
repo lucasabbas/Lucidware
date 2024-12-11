@@ -1,6 +1,7 @@
 package lucidware.godot;
 
 import lucidware.core.*;
+import lucidware.godot.*;
 
 @:native("godot.Vector3")
 extern class Vector3Native extends NativeObject {
@@ -8,30 +9,40 @@ extern class Vector3Native extends NativeObject {
     public static function createInsanceWithXYZArgs(x : Float, y : Float, z : Float) : Dynamic;
 }
 
+enum Vector3Axis {
+    X;
+    Y;
+    Z;
+}
+
 class Vector3 extends InstanceObject {
-    public enum Axis {
-        X,
-        Y,
-        Z
+    @:op([]) public function arrayRead(n:Dynamic) {
+        if (n == 0) return x;
+        if (n == 1) return y;
+        if (n == 2) return z;
+        if (n == "x") return x;
+        if (n == "y") return y;
+        if (n == "z") return z;
+        throw "Invalid index";
     }
 
     public var x(get, set):Float;
 
     function get_x() {
         var untypedX = untyped this.instance.x;
-        return cast untypedX Float;
+        return untypedX;
     }
 
     function set_x(value:Float) {
         untyped this.instance.x = value;
-        return value;
+        return value; // Missing semicolon added here
     }
 
     public var y(get, set):Float;
 
     function get_y() {
         var untypedY = untyped this.instance.y;
-        return cast untypedY Float;
+        return untypedY;
     }
 
     function set_y(value:Float) {
@@ -43,7 +54,7 @@ class Vector3 extends InstanceObject {
 
     function get_z() {
         var untypedZ = untyped this.instance.z;
-        return cast untypedZ Float;
+        return untypedZ;
     }
 
     function set_z(value:Float) {
@@ -51,25 +62,24 @@ class Vector3 extends InstanceObject {
         return value;
     }
     
-    public function new() {
-        this.instance = Vector3Native.createInstance();
-    }
 
-    public function new(x : Float, y : Float, z : Float) {
+    public function new(x : Float = 0, y : Float = 0, z : Float = 0) {
         this.instance = Vector3Native.createInsanceWithXYZArgs(
                 x, y, z
         );
     }
 
-    public function new(instance : Dynamic) {
-        this.instance = instance;
+    public static function fromInstance(instance : Dynamic) : Vector3 {
+        var vector3 = new Vector3();
+        vector3.instance = instance;
+        return vector3;
     }
 
     public static var ZERO : Vector3 = new Vector3(0, 0, 0);
 
     public static var ONE : Vector3 = new Vector3(1, 1, 1);
 
-    public static var INF : Vector3 = new Vector3(Infinity, Infinity, Infinity);
+    public static var INF : Vector3 = untyped Vector3Native.inf;
 
     public static var UP : Vector3 = new Vector3(0, 1, 0);
 
@@ -96,7 +106,7 @@ class Vector3 extends InstanceObject {
     public static var MODEL_REAR : Vector3 = new Vector3(0, 0, -1);
     
     public function abs() : Vector3 {
-        return untyped this.instance.abs();
+        return Vector3.fromInstance(untyped this.instance.abs());
     }
 
     public function angleTo(to : Vector3) : Float {
@@ -104,43 +114,43 @@ class Vector3 extends InstanceObject {
     }
 
     public function bounce(n : Vector3) : Vector3 {
-        return untyped this.instance.bounce(n.instance);
+        return Vector3.fromInstance(untyped this.instance.bounce(n.instance));
     }
 
     public function ceil() : Vector3 {
-        return untyped this.instance.ceil();
+        return Vector3.fromInstance(untyped this.instance.ceil());
     }
 
     public function clamp(min : Vector3, max : Vector3) : Vector3 {
-        return untyped this.instance.clamp(min.instance, max.instance);
+        return Vector3.fromInstance(untyped this.instance.clamp(min.instance, max.instance));
     }
 
-    public function clamp(min : Float, max : Float) : Vector3 {
-        return untyped this.instance.clamp(min, max);
+    public function clampf(min : Float, max : Float) : Vector3 {
+        return Vector3.fromInstance(untyped this.instance.clamp(min, max));
     }
 
     public function cross(b : Vector3) : Vector3 {
-        return untyped this.instance.cross(b.instance);
+        return Vector3.fromInstance(untyped this.instance.cross(b.instance));
     }
 
     public function cubicInterpolate(b : Vector3, preA : Vector3, postB : Vector3, weight : Float) : Vector3 {
-        return untyped this.instance.cubicInterpolate(b.instance, preA.instance, postB.instance, weight);
+        return Vector3.fromInstance(untyped this.instance.cubicInterpolate(b.instance, preA.instance, postB.instance, weight));
     }
 
-    public function cubicInterpolateInTime(b : Vector3, preA : Vector3, postB : Vector3, weight : Float, t : Float, preAT : Float, postBT : Float) {
-        return untyped this.instance.cubicInterpolateInTime(b.instance, preA.instance, postB.instance, weight, t, preAT, postBT);        
+    public function cubicInterpolateInTime(b : Vector3, preA : Vector3, postB : Vector3, weight : Float, t : Float, preAT : Float, postBT : Float) : Vector3 {
+        return Vector3.fromInstance(untyped this.instance.cubicInterpolateInTime(b.instance, preA.instance, postB.instance, weight, t, preAT, postBT));        
     }
 
     public function bezierInterpolate(control1 : Vector3, control2 : Vector3, end : Vector3, t : Float) : Vector3 {
-        return untyped this.instance.bezierInterpolate(control1.instance, control2.instance, end.instance, t);
+        return Vector3.fromInstance(untyped this.instance.bezierInterpolate(control1.instance, control2.instance, end.instance, t));
     }
 
     public function bezierDerivative(control1 : Vector3, control2 : Vector3, end : Vector3, t : Float) : Vector3 {
-        return untyped this.instance.bezierDerivative(control1.instance, control2.instance, end.instance, t);
+        return Vector3.fromInstance(untyped this.instance.bezierDerivative(control1.instance, control2.instance, end.instance, t));
     }
 
     public function directionTo(to : Vector3) : Vector3 {
-        return untyped this.instance.directionTo(to.instance);
+        return Vector3.fromInstance(untyped this.instance.directionTo(to.instance));
     }
 
     public function distanceTo(to : Vector3) : Float {
@@ -156,11 +166,11 @@ class Vector3 extends InstanceObject {
     }
 
     public function floor() : Vector3 {
-        return untyped this.instance.floor();
+        return Vector3.fromInstance(untyped this.instance.floor());
     }
 
     public function inverse() : Vector3 {
-        return untyped this.instance.inverse();
+        return Vector3.fromInstance(untyped this.instance.inverse());
     }
 
     public function isFinite() : Bool {
@@ -180,77 +190,81 @@ class Vector3 extends InstanceObject {
     }
 
     public function lerp(to : Vector3, weight : Float) : Vector3 {
-        return untyped this.instance.lerp(to.instance, weight);
+        return Vector3.fromInstance(untyped this.instance.lerp(to.instance, weight));
     }
 
     public function limitLength(length : Float = 1) : Vector3 {
-        return untyped this.instance.limitLength(length);   
+        return Vector3.fromInstance(untyped this.instance.limitLength(length));   
     }
 
     public function max(with : Vector3) : Vector3 {
-        return untyped this.instance.max(with.instance);
+        return Vector3.fromInstance(untyped this.instance.max(with.instance));
     }
 
-    public function max(with : Float) : Vector3 {
-        return untyped this.instance.max(with);
+    public function maxf(with : Float) : Vector3 {
+        return Vector3.fromInstance(untyped this.instance.max(with));
     }
 
     public function min(with : Vector3) : Vector3 {
-        return untyped this.instance.min(with.instance);
+        return Vector3.fromInstance(untyped this.instance.min(with.instance));
     }
 
-    public function min(with : Float) : Vector3 {
-        return untyped this.instance.min(with);
+    public function minf(with : Float) : Vector3 {
+        return Vector3.fromInstance(untyped this.instance.min(with));
     }
 
-    public function maxAxisIndex() : Vector3.Axis {
+    public function maxAxisIndex() : Vector3Axis {
         var val = untyped this.instance.maxAxisIndex();
-        return cast val Vector3.Axis;
+        if (val == 0) return Vector3Axis.X;
+        else if (val == 1) return Vector3Axis.Y;
+        else return Vector3Axis.Z;
     }
 
-    public function minAxisIndex() : Vector3.Axis {
+    public function minAxisIndex() : Vector3Axis {
         var val = untyped this.instance.minAxisIndex();
-        return cast val Vector3.Axis;
+        if (val == 0) return Vector3Axis.X;
+        else if (val == 1) return Vector3Axis.Y;
+        else return Vector3Axis.Z;
     }
 
     public function moveToward(to : Vector3, delta : Float) : Vector3 {
-        return untyped this.instance.moveToward(to.instance, delta);
+        return Vector3.fromInstance(untyped this.instance.moveToward(to.instance, delta));
     }
 
     public function normalized() : Vector3 {
-        return untyped this.instance.normalized();
+        return Vector3.fromInstance(untyped this.instance.normalized());
     }
 
     public function outer(with : Vector3) : Dynamic {
         return untyped this.instance.outer(with.instance);
     }
 
-    public function posMod(mod : Float) : Vector3 {
-        return untyped this.instance.posMod(mod);
+    public function posModf(mod : Float) : Vector3 {
+        return Vector3.fromInstance(untyped this.instance.posMod(mod));
     }
 
     public function posMod(modv : Vector3) : Vector3 {
-        return untyped this.instance.posMod(modv.instance);
+        return Vector3.fromInstance(untyped this.instance.posMod(modv.instance));
     }
 
     public function project(onNormal : Vector3) : Vector3 {
-        return untyped this.instance.project(onNormal.instance);
+        return Vector3.fromInstance(untyped this.instance.project(onNormal.instance));
     }
 
     public function reflect(normal : Vector3) : Vector3 {
-        return untyped this.instance.reflect(normal.instance);
+        return Vector3.fromInstance(untyped this.instance.reflect(normal.instance));
     }
 
     public function rotated(axis : Vector3, angle : Float) : Vector3 {
-        return untyped this.instance.rotated(axis.instance, angle);
+        return Vector3.fromInstance(untyped this.instance.rotated(axis.instance, angle));
     }
 
     public function round() : Vector3 {
-        return untyped this.instance.round();
+        return Vector3.fromInstance(untyped this.instance.round());
     }
 
     public function sign() : Vector3 {
-        return untyped this.instance.sign();
+        return Vector3.fromInstance(untyped this.instance.sign());
     }
 
     public function signedAngleTo(to : Vector3, axis : Vector3) : Float {
@@ -258,87 +272,92 @@ class Vector3 extends InstanceObject {
     }
 
     public function slerp(to : Vector3, weight : Float) : Vector3 {
-        return untyped this.instance.slerp(to.instance, weight);
+        return Vector3.fromInstance(untyped this.instance.slerp(to.instance, weight));
     }
 
     public function slide(normal : Vector3) : Vector3 {
-        return untyped this.instance.slide(normal.instance);
+        return Vector3.fromInstance(untyped this.instance.slide(normal.instance));
     }
 
     public function snapped(step : Vector3) : Vector3 {
-        return untyped this.instance.snapped(step.instance);
+        return Vector3.fromInstance(untyped this.instance.snapped(step.instance));
     }
 
-    public function snapped(step : Float) : Vector3 {
-        return untyped this.instance.snapped(step);
+    public function snappedf(step : Float) : Vector3 {
+        return Vector3.fromInstance(untyped this.instance.snapped(step));
     }
     
-    @:op(a + b)
-    public function add(rhs: Vector3) : Vector3 {
-        return untyped this.instance + rhs.instance;
+    @:op(A + B)
+    public function add(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance + rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance + rhs);
+        }
     }
 
-    @:op(a - b)
-    public function sub(rhs: Vector3) : Vector3 {
-        return untyped this.instance - rhs.instance;
+    @:op(A - B)
+    public function sub(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance - rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance - rhs);
+        }
     }
 
-    @:op(a * b)
-    public function mul(rhs: Vector3) : Vector3 {
-        return untyped this.instance * rhs.instance;
+    @:op(A * B)
+    public function mul(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance * rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance * rhs);
+        }
     }
 
-    @:op(a * b)
-    public function mul(rhs: Float) : Vector3 {
-        return untyped this.instance * rhs;
+    @:op(A / B)
+    public function div(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance / rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance / rhs);
+        }
     }
 
-    @:op(a / b)
-    public function div(rhs: Vector3) : Vector3 {
-        return untyped this.instance / rhs.instance;
+    @:op(A % B)
+    public function mod(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance % rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance % rhs);
+        }
     }
 
-    @:op(a / b)
-    public function div(rhs: Float) : Vector3 {
-        return untyped this.instance / rhs;
-    }
-
-    @:op(a % b)
-    public function mod(rhs: Vector3) : Vector3 {
-        return untyped this.instance % rhs.instance;
-    }
-
-    @:op(a % b)
-    public function mod(rhs: Float) : Vector3 {
-        return untyped this.instance % rhs;
-    }
-
-    @:op(a == b)
+    @:op(A == B)
     public function eq(rhs: Vector3) : Bool {
         return untyped this.instance == rhs.instance;
     }
 
-    @:op(a != b)
+    @:op(A != B)
     public function neq(rhs: Vector3) : Bool {
         return untyped this.instance != rhs.instance;
     }
 
-    @:op(a < b)
+    @:op(A < B)
     public function lt(rhs: Vector3) : Bool {
         return untyped this.instance < rhs.instance;
     }
 
-    @:op(a <= b)
+    @:op(A <= B)
     public function lte(rhs: Vector3) : Bool {
         return untyped this.instance <= rhs.instance;
     }
 
-    @:op(a > b)
+    @:op(A > B)
     public function gt(rhs: Vector3) : Bool {
         return untyped this.instance > rhs.instance;
     }
 
-    @:op(a >= b)
+    @:op(A >= B)
     public function gte(rhs: Vector3) : Bool {
         return untyped this.instance >= rhs.instance;
     }
@@ -356,6 +375,7 @@ class Vector3 extends InstanceObject {
     }
 
     public function toString() : String {
-        return untyped this.instance.toString();
+        var str = "<" + x + ", " + y + ", " + z + ">";
+        return str;
     }
 }
