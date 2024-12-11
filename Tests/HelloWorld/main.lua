@@ -61,4 +61,6 @@ local gv3_combined = gv3_1 + gv3_2;
 
 print(gv3_combined)
 
+print(gv3_combined.toString())
+
 update(0)

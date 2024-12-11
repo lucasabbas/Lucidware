@@ -375,7 +375,6 @@ class Vector3 extends InstanceObject {
     }
 
     public function toString() : String {
-        var str = "<" + x + ", " + y + ", " + z + ">";
-        return str;
+        return untyped __lua__("self.instance.toString()");
     }
 }

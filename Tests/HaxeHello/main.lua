@@ -1374,8 +1374,7 @@ __lucidware_godot_Vector3.prototype.isZeroApprox = function(self)
   do return self.instance:isZeroApprox() end
 end
 __lucidware_godot_Vector3.prototype.toString = function(self) 
-  local str = Std.string(Std.string(Std.string(Std.string(Std.string(Std.string("<") .. Std.string(self:get_x())) .. Std.string(", ")) .. Std.string(self:get_y())) .. Std.string(", ")) .. Std.string(self:get_z())) .. Std.string(">");
-  do return str end
+  do return self.instance.toString() end
 end
 
 __lucidware_godot_Vector3.prototype.__class__ =  __lucidware_godot_Vector3
