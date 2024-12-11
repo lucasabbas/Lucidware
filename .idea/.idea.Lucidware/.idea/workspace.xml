@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfd5743e-75a8-457e-b405-f5cf9473efa5" name="Changes" comment="Started work on the Haxe api">
+    <list default="true" id="cfd5743e-75a8-457e-b405-f5cf9473efa5" name="Changes" comment="fixed toString">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lucidware/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/HaxeHello/main.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/HaxeHello/main.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/HaxeHello/src/lucidware/godot/Vector2.hx" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/HaxeHello/src/lucidware/godot/Vector2.hx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/HaxeHello/src/lucidware/godot/Vector3.hx" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/HaxeHello/src/lucidware/godot/Vector3.hx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/HelloWorld/main.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/HelloWorld/main.lua" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +119,7 @@
       <workItem from="1733686297077" duration="2736000" />
       <workItem from="1733733139080" duration="1344000" />
       <workItem from="1733891193002" duration="4820000" />
-      <workItem from="1733947571998" duration="1569000" />
+      <workItem from="1733947571998" duration="4411000" />
     </task>
     <task id="LOCAL-00001" summary="Added UiTest">
       <option name="closed" value="true" />
@@ -145,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733948470719</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed toString">
+      <option name="closed" value="true" />
+      <created>1733949201250</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733949201250</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +177,8 @@
     <MESSAGE value="Added UiTest" />
     <MESSAGE value="added lite assets" />
     <MESSAGE value="Started work on the Haxe api" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started work on the Haxe api" />
+    <MESSAGE value="fixed toString" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed toString" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

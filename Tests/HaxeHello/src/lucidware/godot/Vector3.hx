@@ -16,16 +16,6 @@ enum Vector3Axis {
 }
 
 class Vector3 extends InstanceObject {
-    @:op([]) public function arrayRead(n:Dynamic) {
-        if (n == 0) return x;
-        if (n == 1) return y;
-        if (n == 2) return z;
-        if (n == "x") return x;
-        if (n == "y") return y;
-        if (n == "z") return z;
-        throw "Invalid index";
-    }
-
     public var x(get, set):Float;
 
     function get_x() {
@@ -286,7 +276,7 @@ class Vector3 extends InstanceObject {
     public function snappedf(step : Float) : Vector3 {
         return Vector3.fromInstance(untyped this.instance.snapped(step));
     }
-    
+
     @:op(A + B)
     public function add(rhs: Any) : Vector3 {
         if (Std.isOfType(rhs, Vector3)) {
@@ -378,3 +368,130 @@ class Vector3 extends InstanceObject {
         return untyped __lua__("self.instance.toString()");
     }
 }
+/*
+abstract Vector3(Vector3Instance) from Vector3Instance {
+
+    var vector3Instance : Vector3Instance;
+
+    public function new(x : Float = 0, y : Float = 0, z : Float = 0) {
+        this.vector3Instance = new Vector3Instance(x, y, z);
+    }
+
+    public static function fromInstance(instance : Dynamic) : Vector3 {
+        var vector3 = new Vector3();
+        vector3.vector3Instance = Vector3Instance.fromInstance(instance);
+        return vector3;
+    }
+
+    @:op(a.b) public function fieldRead(name:String)
+    {
+        if (Reflect.hasField(this.vector3Instance, name)) {
+            return Reflect.field(this.vector3Instance, name);
+        } else {
+            throw "Invalid field";
+        }
+    }
+    
+    @:op(a.b) public function fieldWrite(name:String, value:String){
+        if (Reflect.hasField(this.vector3Instance, name)) {
+            Reflect.setField(this.vector3Instance, name, value);
+        } else {
+            throw "Invalid field";
+        }
+    }
+
+    @:op([]) public function arrayRead(n:Dynamic) {
+        if (n == 0) return x;
+        if (n == 1) return y;
+        if (n == 2) return z;
+        if (n == "x") return x;
+        if (n == "y") return y;
+        if (n == "z") return z;
+        throw "Invalid index";
+    }
+    
+    @:op([]) public function arrayWrite(n:Dynamic, value:Float) {
+        if (n == 0) x = value;
+        else if (n == 1) y = value;
+        else if (n == 2) z = value;
+        else if (n == "x") x = value;
+        else if (n == "y") y = value;
+        else if (n == "z") z = value;
+        else throw "Invalid index";
+    }
+
+    @:op(A + B)
+    public function add(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance + rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance + rhs);
+        }
+    }
+
+    @:op(A - B)
+    public function sub(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance - rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance - rhs);
+        }
+    }
+
+    @:op(A * B)
+    public function mul(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance * rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance * rhs);
+        }
+    }
+
+    @:op(A / B)
+    public function div(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance / rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance / rhs);
+        }
+    }
+
+    @:op(A % B)
+    public function mod(rhs: Any) : Vector3 {
+        if (Std.isOfType(rhs, Vector3)) {
+            return Vector3.fromInstance(untyped this.instance % rhs.instance);
+        } else {
+            return Vector3.fromInstance(untyped this.instance % rhs);
+        }
+    }
+
+    @:op(A == B)
+    public function eq(rhs: Vector3) : Bool {
+        return untyped this.instance == rhs.instance;
+    }
+
+    @:op(A != B)
+    public function neq(rhs: Vector3) : Bool {
+        return untyped this.instance != rhs.instance;
+    }
+
+    @:op(A < B)
+    public function lt(rhs: Vector3) : Bool {
+        return untyped this.instance < rhs.instance;
+    }
+
+    @:op(A <= B)
+    public function lte(rhs: Vector3) : Bool {
+        return untyped this.instance <= rhs.instance;
+    }
+
+    @:op(A > B)
+    public function gt(rhs: Vector3) : Bool {
+        return untyped this.instance > rhs.instance;
+    }
+
+    @:op(A >= B)
+    public function gte(rhs: Vector3) : Bool {
+        return untyped this.instance >= rhs.instance;
+    }
+}*/

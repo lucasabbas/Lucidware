@@ -794,24 +794,12 @@ __haxe_Exception.super = function(self,message,previous,native)
   end;
 end
 __haxe_Exception.__name__ = true
-__haxe_Exception.thrown = function(value) 
-  if (__lua_Boot.__instanceof(value, __haxe_Exception)) then 
-    do return value:get_native() end;
-  else
-    local e = __haxe_ValueException.new(value);
-    e.__skipStack = e.__skipStack + 1;
-    do return e end;
-  end;
-end
 __haxe_Exception.prototype = _hx_e();
 __haxe_Exception.prototype.toString = function(self) 
   do return self:get_message() end
 end
 __haxe_Exception.prototype.get_message = function(self) 
   do return self.__exceptionMessage end
-end
-__haxe_Exception.prototype.get_native = function(self) 
-  do return self.__nativeException end
 end
 
 __haxe_Exception.prototype.__class__ =  __haxe_Exception
@@ -1113,27 +1101,6 @@ __lucidware_godot_Vector3.fromInstance = function(instance)
   do return vector3 end;
 end
 __lucidware_godot_Vector3.prototype = _hx_e();
-__lucidware_godot_Vector3.prototype.arrayRead = function(self,n) 
-  if (n == 0) then 
-    do return self:get_x() end;
-  end;
-  if (n == 1) then 
-    do return self:get_y() end;
-  end;
-  if (n == 2) then 
-    do return self:get_z() end;
-  end;
-  if (n == "x") then 
-    do return self:get_x() end;
-  end;
-  if (n == "y") then 
-    do return self:get_y() end;
-  end;
-  if (n == "z") then 
-    do return self:get_z() end;
-  end;
-  _G.error(__haxe_Exception.thrown("Invalid index"),0);
-end
 __lucidware_godot_Vector3.prototype.get_x = function(self) 
   local untypedX = self.instance.x;
   do return untypedX end
