@@ -1,3 +1,4 @@
+--library lucidware
 --class-path src
 --main Main
 --lua main.lua
