@@ -185,6 +185,7 @@ local Enum = _hx_e();
 local Array = _hx_e()
 local Main = _hx_e()
 local Math = _hx_e()
+local Reflect = _hx_e()
 local String = _hx_e()
 local Std = _hx_e()
 __haxe_Exception = _hx_e()
@@ -195,12 +196,11 @@ __haxe_exceptions_PosException = _hx_e()
 __haxe_exceptions_NotImplementedException = _hx_e()
 __haxe_iterators_ArrayIterator = _hx_e()
 __haxe_iterators_ArrayKeyValueIterator = _hx_e()
+__haxe_macro_Error = _hx_e()
 __lua_Boot = _hx_e()
 __lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
-__lucidware_core_InstanceObject = _hx_e()
-__lucidware_godot_Vector3Axis = _hx_e()
-__lucidware_godot_Vector3 = _hx_e()
+__lucidware_godot__Vector3_Vector3_Impl_ = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
 local _hx_pcall_default = {};
@@ -556,12 +556,18 @@ Main.new = {}
 Main.__name__ = true
 Main.main = function() 
   __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=5,className="Main",methodName="main"}));
-  local vec3_1 = __lucidware_godot_Vector3.new(1, 2, 3);
-  __haxe_Log.trace(vec3_1:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=7,className="Main",methodName="main"}));
-  local vec3_2 = __lucidware_godot_Vector3.new(4, 5, 6);
-  __haxe_Log.trace(vec3_2:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=9,className="Main",methodName="main"}));
-  local vec3_3 = vec3_1:add(vec3_2);
-  __haxe_Log.trace(vec3_3:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=11,className="Main",methodName="main"}));
+  local vec3_1 = __lucidware_godot__Vector3_Vector3_Impl_._new(1, 2, 3);
+  __haxe_Log.trace((__lucidware_godot__Vector3_Vector3_Impl_.fieldRead(vec3_1, "toString"))(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=7,className="Main",methodName="main"}));
+  local vec3_2 = __lucidware_godot__Vector3_Vector3_Impl_._new(4, 5, 6);
+  __haxe_Log.trace((__lucidware_godot__Vector3_Vector3_Impl_.fieldRead(vec3_2, "toString"))(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=9,className="Main",methodName="main"}));
+  local vec3_3 = __lucidware_godot__Vector3_Vector3_Impl_.add(vec3_1, vec3_2);
+  __haxe_Log.trace((function() 
+    local _hx_1
+    if (vec3_3 == nil) then 
+    _hx_1 = "null"; else 
+    _hx_1 = (__lucidware_godot__Vector3_Vector3_Impl_.fieldRead(vec3_3, "toString"))(); end
+    return _hx_1
+  end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=11,className="Main",methodName="main"}));
 end
 
 Math.new = {}
@@ -581,6 +587,31 @@ Math.min = function(a,b)
     do return (0/0) end;
   else
     do return _G.math.min(a, b) end;
+  end;
+end
+
+Reflect.new = {}
+Reflect.__name__ = true
+Reflect.field = function(o,field) 
+  if (_G.type(o) == "string") then 
+    if (field == "length") then 
+      do return _hx_wrap_if_string_field(o,'length') end;
+    else
+      do return String.prototype[field] end;
+    end;
+  else
+    local _hx_status, _hx_result = pcall(function() 
+    
+        do return o[field] end;
+      return _hx_pcall_default
+    end)
+    if not _hx_status and _hx_result == "_hx_pcall_break" then
+    elseif not _hx_status then 
+      local _g = _hx_result;
+      do return nil end;
+    elseif _hx_result ~= _hx_pcall_default then
+      return _hx_result
+    end;
   end;
 end
 
@@ -794,12 +825,24 @@ __haxe_Exception.super = function(self,message,previous,native)
   end;
 end
 __haxe_Exception.__name__ = true
+__haxe_Exception.thrown = function(value) 
+  if (__lua_Boot.__instanceof(value, __haxe_Exception)) then 
+    do return value:get_native() end;
+  else
+    local e = __haxe_ValueException.new(value);
+    e.__skipStack = e.__skipStack + 1;
+    do return e end;
+  end;
+end
 __haxe_Exception.prototype = _hx_e();
 __haxe_Exception.prototype.toString = function(self) 
   do return self:get_message() end
 end
 __haxe_Exception.prototype.get_message = function(self) 
   do return self.__exceptionMessage end
+end
+__haxe_Exception.prototype.get_native = function(self) 
+  do return self.__nativeException end
 end
 
 __haxe_Exception.prototype.__class__ =  __haxe_Exception
@@ -948,6 +991,22 @@ __haxe_iterators_ArrayKeyValueIterator.prototype = _hx_e();
 
 __haxe_iterators_ArrayKeyValueIterator.prototype.__class__ =  __haxe_iterators_ArrayKeyValueIterator
 
+__haxe_macro_Error.new = function(message,pos,previous) 
+  local self = _hx_new(__haxe_macro_Error.prototype)
+  __haxe_macro_Error.super(self,message,pos,previous)
+  return self
+end
+__haxe_macro_Error.super = function(self,message,pos,previous) 
+  __haxe_Exception.super(self,message,previous);
+  self.pos = pos;
+end
+__haxe_macro_Error.__name__ = true
+__haxe_macro_Error.prototype = _hx_e();
+
+__haxe_macro_Error.prototype.__class__ =  __haxe_macro_Error
+__haxe_macro_Error.__super__ = __haxe_Exception
+setmetatable(__haxe_macro_Error.prototype,{__index=__haxe_Exception.prototype})
+
 __lua_Boot.new = {}
 __lua_Boot.__name__ = true
 __lua_Boot.__instanceof = function(o,cl) 
@@ -1063,26 +1122,9 @@ __lua_UserData.__name__ = true
 __lua_Thread.new = {}
 __lua_Thread.__name__ = true
 
-__lucidware_core_InstanceObject.new = {}
-__lucidware_core_InstanceObject.__name__ = true
-__lucidware_core_InstanceObject.prototype = _hx_e();
-
-__lucidware_core_InstanceObject.prototype.__class__ =  __lucidware_core_InstanceObject
-_hxClasses["lucidware.godot.Vector3Axis"] = { __ename__ = true, __constructs__ = _hx_tab_array({[0]="X","Y","Z"},3)}
-__lucidware_godot_Vector3Axis = _hxClasses["lucidware.godot.Vector3Axis"];
-__lucidware_godot_Vector3Axis.X = _hx_tab_array({[0]="X",0,__enum__ = __lucidware_godot_Vector3Axis},2)
-
-__lucidware_godot_Vector3Axis.Y = _hx_tab_array({[0]="Y",1,__enum__ = __lucidware_godot_Vector3Axis},2)
-
-__lucidware_godot_Vector3Axis.Z = _hx_tab_array({[0]="Z",2,__enum__ = __lucidware_godot_Vector3Axis},2)
-
-
-__lucidware_godot_Vector3.new = function(x,y,z) 
-  local self = _hx_new(__lucidware_godot_Vector3.prototype)
-  __lucidware_godot_Vector3.super(self,x,y,z)
-  return self
-end
-__lucidware_godot_Vector3.super = function(self,x,y,z) 
+__lucidware_godot__Vector3_Vector3_Impl_.new = {}
+__lucidware_godot__Vector3_Vector3_Impl_.__name__ = true
+__lucidware_godot__Vector3_Vector3_Impl_._new = function(x,y,z) 
   if (z == nil) then 
     z = 0;
   end;
@@ -1092,261 +1134,166 @@ __lucidware_godot_Vector3.super = function(self,x,y,z)
   if (x == nil) then 
     x = 0;
   end;
-  self.instance = godot.Vector3.__new(x, y, z);
+  do return godot.Vector3.__new(x, y, z) end;
 end
-__lucidware_godot_Vector3.__name__ = true
-__lucidware_godot_Vector3.fromInstance = function(instance) 
-  local vector3 = __lucidware_godot_Vector3.new();
-  vector3.instance = instance;
-  do return vector3 end;
-end
-__lucidware_godot_Vector3.prototype = _hx_e();
-__lucidware_godot_Vector3.prototype.get_x = function(self) 
-  local untypedX = self.instance.x;
-  do return untypedX end
-end
-__lucidware_godot_Vector3.prototype.set_x = function(self,value) 
-  self.instance.x = value;
-  do return value end
-end
-__lucidware_godot_Vector3.prototype.get_y = function(self) 
-  local untypedY = self.instance.y;
-  do return untypedY end
-end
-__lucidware_godot_Vector3.prototype.set_y = function(self,value) 
-  self.instance.y = value;
-  do return value end
-end
-__lucidware_godot_Vector3.prototype.get_z = function(self) 
-  local untypedZ = self.instance.z;
-  do return untypedZ end
-end
-__lucidware_godot_Vector3.prototype.set_z = function(self,value) 
-  self.instance.z = value;
-  do return value end
-end
-__lucidware_godot_Vector3.prototype.abs = function(self) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:abs()) end
-end
-__lucidware_godot_Vector3.prototype.angleTo = function(self,to) 
-  do return self.instance:angleTo(to.instance) end
-end
-__lucidware_godot_Vector3.prototype.bounce = function(self,n) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:bounce(n.instance)) end
-end
-__lucidware_godot_Vector3.prototype.ceil = function(self) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:ceil()) end
-end
-__lucidware_godot_Vector3.prototype.clamp = function(self,min,max) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:clamp(min.instance, max.instance)) end
-end
-__lucidware_godot_Vector3.prototype.clampf = function(self,min,max) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:clamp(min, max)) end
-end
-__lucidware_godot_Vector3.prototype.cross = function(self,b) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:cross(b.instance)) end
-end
-__lucidware_godot_Vector3.prototype.cubicInterpolate = function(self,b,preA,postB,weight) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:cubicInterpolate(b.instance, preA.instance, postB.instance, weight)) end
-end
-__lucidware_godot_Vector3.prototype.cubicInterpolateInTime = function(self,b,preA,postB,weight,t,preAT,postBT) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:cubicInterpolateInTime(b.instance, preA.instance, postB.instance, weight, t, preAT, postBT)) end
-end
-__lucidware_godot_Vector3.prototype.bezierInterpolate = function(self,control1,control2,_end,t) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:bezierInterpolate(control1.instance, control2.instance, _end.instance, t)) end
-end
-__lucidware_godot_Vector3.prototype.bezierDerivative = function(self,control1,control2,_end,t) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:bezierDerivative(control1.instance, control2.instance, _end.instance, t)) end
-end
-__lucidware_godot_Vector3.prototype.directionTo = function(self,to) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:directionTo(to.instance)) end
-end
-__lucidware_godot_Vector3.prototype.distanceTo = function(self,to) 
-  do return self.instance:distanceTo(to.instance) end
-end
-__lucidware_godot_Vector3.prototype.distanceSquaredTo = function(self,to) 
-  do return self.instance:distanceSquaredTo(to.instance) end
-end
-__lucidware_godot_Vector3.prototype.dot = function(self,with) 
-  do return self.instance:dot(with.instance) end
-end
-__lucidware_godot_Vector3.prototype.floor = function(self) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:floor()) end
-end
-__lucidware_godot_Vector3.prototype.inverse = function(self) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:inverse()) end
-end
-__lucidware_godot_Vector3.prototype.isFinite = function(self) 
-  do return self.instance:isFinite() end
-end
-__lucidware_godot_Vector3.prototype.isNormalized = function(self) 
-  do return self.instance:isNormalized() end
-end
-__lucidware_godot_Vector3.prototype.length = function(self) 
-  do return _hx_wrap_if_string_field(self.instance,'length')(self.instance) end
-end
-__lucidware_godot_Vector3.prototype.lengthSquared = function(self) 
-  do return self.instance:lengthSquared() end
-end
-__lucidware_godot_Vector3.prototype.lerp = function(self,to,weight) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:lerp(to.instance, weight)) end
-end
-__lucidware_godot_Vector3.prototype.limitLength = function(self,length) 
-  if (length == nil) then 
-    length = 1;
-  end;
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:limitLength(length)) end
-end
-__lucidware_godot_Vector3.prototype.max = function(self,with) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:max(with.instance)) end
-end
-__lucidware_godot_Vector3.prototype.maxf = function(self,with) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:max(with)) end
-end
-__lucidware_godot_Vector3.prototype.min = function(self,with) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:min(with.instance)) end
-end
-__lucidware_godot_Vector3.prototype.minf = function(self,with) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:min(with)) end
-end
-__lucidware_godot_Vector3.prototype.maxAxisIndex = function(self) 
-  local val = self.instance:maxAxisIndex();
-  if (val == 0) then 
-    do return __lucidware_godot_Vector3Axis.X end;
+__lucidware_godot__Vector3_Vector3_Impl_.fieldRead = function(this1,name) 
+  if (name == "toString") then 
+    do return function() 
+      local v = this1;
+      do return v.toString() end;
+    end end;
   else
-    if (val == 1) then 
-      do return __lucidware_godot_Vector3Axis.Y end;
+    local o = this1;
+    if ((function() 
+      local _hx_1
+      if ((_G.type(o) == "function") and not ((function() 
+        local _hx_2
+        if (_G.type(o) ~= "table") then 
+        _hx_2 = false; else 
+        _hx_2 = o.__name__; end
+        return _hx_2
+      end )() or (function() 
+        local _hx_3
+        if (_G.type(o) ~= "table") then 
+        _hx_3 = false; else 
+        _hx_3 = o.__ename__; end
+        return _hx_3
+      end )())) then 
+      _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
+      _hx_1 = true; elseif (o.__fields__ ~= nil) then 
+      _hx_1 = o.__fields__[name] ~= nil; else 
+      _hx_1 = o[name] ~= nil; end
+      return _hx_1
+    end )()) then 
+      do return Reflect.field(this1, name) end;
     else
-      do return __lucidware_godot_Vector3Axis.Z end;
+      _G.error(__haxe_Exception.thrown("Invalid field"),0);
     end;
   end;
 end
-__lucidware_godot_Vector3.prototype.minAxisIndex = function(self) 
-  local val = self.instance:minAxisIndex();
-  if (val == 0) then 
-    do return __lucidware_godot_Vector3Axis.X end;
+__lucidware_godot__Vector3_Vector3_Impl_.fieldWrite = function(this1,name,value) 
+  local o = this1;
+  if ((function() 
+    local _hx_1
+    if ((_G.type(o) == "function") and not ((function() 
+      local _hx_2
+      if (_G.type(o) ~= "table") then 
+      _hx_2 = false; else 
+      _hx_2 = o.__name__; end
+      return _hx_2
+    end )() or (function() 
+      local _hx_3
+      if (_G.type(o) ~= "table") then 
+      _hx_3 = false; else 
+      _hx_3 = o.__ename__; end
+      return _hx_3
+    end )())) then 
+    _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
+    _hx_1 = true; elseif (o.__fields__ ~= nil) then 
+    _hx_1 = o.__fields__[name] ~= nil; else 
+    _hx_1 = o[name] ~= nil; end
+    return _hx_1
+  end )()) then 
+    this1[name] = value;
   else
-    if (val == 1) then 
-      do return __lucidware_godot_Vector3Axis.Y end;
+    _G.error(__haxe_Exception.thrown("Invalid field"),0);
+  end;
+end
+__lucidware_godot__Vector3_Vector3_Impl_.arrayRead = function(this1,n) 
+  if (n == 0) then 
+    do return this1.x end;
+  end;
+  if (n == 1) then 
+    do return this1.y end;
+  end;
+  if (n == 2) then 
+    do return this1.z end;
+  end;
+  if (n == "x") then 
+    do return this1.x end;
+  end;
+  if (n == "y") then 
+    do return this1.y end;
+  end;
+  if (n == "z") then 
+    do return this1.z end;
+  end;
+  _G.error(__haxe_Exception.thrown("Invalid index"),0);
+end
+__lucidware_godot__Vector3_Vector3_Impl_.arrayWrite = function(this1,n,value) 
+  if (n == 0) then 
+    this1.x = value;
+  else
+    if (n == 1) then 
+      this1.y = value;
     else
-      do return __lucidware_godot_Vector3Axis.Z end;
+      if (n == 2) then 
+        this1.z = value;
+      else
+        if (n == "x") then 
+          this1.x = value;
+        else
+          if (n == "y") then 
+            this1.y = value;
+          else
+            if (n == "z") then 
+              this1.z = value;
+            else
+              _G.error(__haxe_Exception.thrown("Invalid index"),0);
+            end;
+          end;
+        end;
+      end;
     end;
   end;
 end
-__lucidware_godot_Vector3.prototype.moveToward = function(self,to,delta) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:moveToward(to.instance, delta)) end
+__lucidware_godot__Vector3_Vector3_Impl_.add = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs + rhs end;
 end
-__lucidware_godot_Vector3.prototype.normalized = function(self) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:normalized()) end
+__lucidware_godot__Vector3_Vector3_Impl_.sub = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs - rhs end;
 end
-__lucidware_godot_Vector3.prototype.outer = function(self,with) 
-  do return self.instance:outer(with.instance) end
+__lucidware_godot__Vector3_Vector3_Impl_.mul = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs * rhs end;
 end
-__lucidware_godot_Vector3.prototype.posModf = function(self,mod) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:posMod(mod)) end
+__lucidware_godot__Vector3_Vector3_Impl_.div = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs / rhs end;
 end
-__lucidware_godot_Vector3.prototype.posMod = function(self,modv) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:posMod(modv.instance)) end
+__lucidware_godot__Vector3_Vector3_Impl_.mod = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs % rhs end;
 end
-__lucidware_godot_Vector3.prototype.project = function(self,onNormal) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:project(onNormal.instance)) end
+__lucidware_godot__Vector3_Vector3_Impl_.eq = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs == rhs end;
 end
-__lucidware_godot_Vector3.prototype.reflect = function(self,normal) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:reflect(normal.instance)) end
+__lucidware_godot__Vector3_Vector3_Impl_.neq = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs ~= rhs end;
 end
-__lucidware_godot_Vector3.prototype.rotated = function(self,axis,angle) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:rotated(axis.instance, angle)) end
+__lucidware_godot__Vector3_Vector3_Impl_.lt = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs < rhs end;
 end
-__lucidware_godot_Vector3.prototype.round = function(self) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:round()) end
+__lucidware_godot__Vector3_Vector3_Impl_.lte = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs <= rhs end;
 end
-__lucidware_godot_Vector3.prototype.sign = function(self) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:sign()) end
+__lucidware_godot__Vector3_Vector3_Impl_.gt = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs > rhs end;
 end
-__lucidware_godot_Vector3.prototype.signedAngleTo = function(self,to,axis) 
-  do return self.instance:signedAngleTo(to.instance, axis.instance) end
+__lucidware_godot__Vector3_Vector3_Impl_.gte = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs >= rhs end;
 end
-__lucidware_godot_Vector3.prototype.slerp = function(self,to,weight) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:slerp(to.instance, weight)) end
+__lucidware_godot__Vector3_Vector3_Impl_.toString = function(v) 
+  do return v.toString() end;
 end
-__lucidware_godot_Vector3.prototype.slide = function(self,normal) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:slide(normal.instance)) end
-end
-__lucidware_godot_Vector3.prototype.snapped = function(self,step) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:snapped(step.instance)) end
-end
-__lucidware_godot_Vector3.prototype.snappedf = function(self,step) 
-  do return __lucidware_godot_Vector3.fromInstance(self.instance:snapped(step)) end
-end
-__lucidware_godot_Vector3.prototype.add = function(self,rhs) 
-  if (__lua_Boot.__instanceof(rhs, __lucidware_godot_Vector3)) then 
-    do return __lucidware_godot_Vector3.fromInstance(_hx_dyn_add(self.instance,rhs.instance)) end;
-  else
-    do return __lucidware_godot_Vector3.fromInstance(self.instance + rhs) end;
-  end;
-end
-__lucidware_godot_Vector3.prototype.sub = function(self,rhs) 
-  if (__lua_Boot.__instanceof(rhs, __lucidware_godot_Vector3)) then 
-    do return __lucidware_godot_Vector3.fromInstance(self.instance - rhs.instance) end;
-  else
-    do return __lucidware_godot_Vector3.fromInstance(self.instance - rhs) end;
-  end;
-end
-__lucidware_godot_Vector3.prototype.mul = function(self,rhs) 
-  if (__lua_Boot.__instanceof(rhs, __lucidware_godot_Vector3)) then 
-    do return __lucidware_godot_Vector3.fromInstance(self.instance * rhs.instance) end;
-  else
-    do return __lucidware_godot_Vector3.fromInstance(self.instance * rhs) end;
-  end;
-end
-__lucidware_godot_Vector3.prototype.div = function(self,rhs) 
-  if (__lua_Boot.__instanceof(rhs, __lucidware_godot_Vector3)) then 
-    do return __lucidware_godot_Vector3.fromInstance(self.instance / rhs.instance) end;
-  else
-    do return __lucidware_godot_Vector3.fromInstance(self.instance / rhs) end;
-  end;
-end
-__lucidware_godot_Vector3.prototype.mod = function(self,rhs) 
-  if (__lua_Boot.__instanceof(rhs, __lucidware_godot_Vector3)) then 
-    do return __lucidware_godot_Vector3.fromInstance(_G.math.fmod(self.instance, rhs.instance)) end;
-  else
-    do return __lucidware_godot_Vector3.fromInstance(_G.math.fmod(self.instance, rhs)) end;
-  end;
-end
-__lucidware_godot_Vector3.prototype.eq = function(self,rhs) 
-  do return self.instance == rhs.instance end
-end
-__lucidware_godot_Vector3.prototype.neq = function(self,rhs) 
-  do return self.instance ~= rhs.instance end
-end
-__lucidware_godot_Vector3.prototype.lt = function(self,rhs) 
-  do return self.instance < rhs.instance end
-end
-__lucidware_godot_Vector3.prototype.lte = function(self,rhs) 
-  do return self.instance <= rhs.instance end
-end
-__lucidware_godot_Vector3.prototype.gt = function(self,rhs) 
-  do return self.instance > rhs.instance end
-end
-__lucidware_godot_Vector3.prototype.gte = function(self,rhs) 
-  do return self.instance >= rhs.instance end
-end
-__lucidware_godot_Vector3.prototype.equals = function(self,other) 
-  do return self.instance:equals(other.instance) end
-end
-__lucidware_godot_Vector3.prototype.isEqualApprox = function(self,other) 
-  do return self.instance:isEqualApprox(other.instance) end
-end
-__lucidware_godot_Vector3.prototype.isZeroApprox = function(self) 
-  do return self.instance:isZeroApprox() end
-end
-__lucidware_godot_Vector3.prototype.toString = function(self) 
-  do return self.instance.toString() end
-end
-
-__lucidware_godot_Vector3.prototype.__class__ =  __lucidware_godot_Vector3
-__lucidware_godot_Vector3.__super__ = __lucidware_core_InstanceObject
-setmetatable(__lucidware_godot_Vector3.prototype,{__index=__lucidware_core_InstanceObject.prototype})
 if _hx_bit_raw then
     _hx_bit_clamp = function(v)
     if v <= 2147483647 and v >= -2147483648 then
@@ -1387,37 +1334,7 @@ end
 local _hx_static_init = function()
   
   String.__name__ = true;
-  Array.__name__ = true;__lucidware_godot_Vector3.ZERO = __lucidware_godot_Vector3.new(0, 0, 0);
-  
-  __lucidware_godot_Vector3.ONE = __lucidware_godot_Vector3.new(1, 1, 1);
-  
-  __lucidware_godot_Vector3.INF = godot.Vector3.inf;
-  
-  __lucidware_godot_Vector3.UP = __lucidware_godot_Vector3.new(0, 1, 0);
-  
-  __lucidware_godot_Vector3.DOWN = __lucidware_godot_Vector3.new(0, -1, 0);
-  
-  __lucidware_godot_Vector3.LEFT = __lucidware_godot_Vector3.new(-1, 0, 0);
-  
-  __lucidware_godot_Vector3.RIGHT = __lucidware_godot_Vector3.new(1, 0, 0);
-  
-  __lucidware_godot_Vector3.FORWARD = __lucidware_godot_Vector3.new(0, 0, -1);
-  
-  __lucidware_godot_Vector3.BACK = __lucidware_godot_Vector3.new(0, 0, 1);
-  
-  __lucidware_godot_Vector3.MODEL_LEFT = __lucidware_godot_Vector3.new(1, 0, 0);
-  
-  __lucidware_godot_Vector3.MODEL_RIGHT = __lucidware_godot_Vector3.new(-1, 0, 0);
-  
-  __lucidware_godot_Vector3.MODEL_TOP = __lucidware_godot_Vector3.new(0, 1, 0);
-  
-  __lucidware_godot_Vector3.MODEL_BOTTOM = __lucidware_godot_Vector3.new(0, -1, 0);
-  
-  __lucidware_godot_Vector3.MODEL_FRONT = __lucidware_godot_Vector3.new(0, 0, 1);
-  
-  __lucidware_godot_Vector3.MODEL_REAR = __lucidware_godot_Vector3.new(0, 0, -1);
-  
-  
+  Array.__name__ = true;
 end
 
 _hx_print = print or (function() end)
@@ -1446,14 +1363,6 @@ _hx_wrap_if_string_field = function(o, fld)
     return o[fld]
   end
 end
-
-_hx_dyn_add = function(a,b)
-  if (_G.type(a) == 'string' or _G.type(b) == 'string') then
-    return Std.string(a)..Std.string(b)
-  else
-    return a + b;
-  end;
-end;
 
 function _hx_handle_error(obj)
   local message = tostring(obj)
