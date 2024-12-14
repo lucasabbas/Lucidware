@@ -3,8 +3,7 @@ package lucidware.godot;
 import lucidware.core.*;
 
 @:native("godot.Object")
-extern class GodotObjectNative extends NativeObject {}
-
-class GodotObject extends InstanceObject {
-    
+extern class GodotObject extends NativeObject {
+    @:native("__new")
+    public function new();
 }

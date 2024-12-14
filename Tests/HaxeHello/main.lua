@@ -200,6 +200,7 @@ __haxe_macro_Error = _hx_e()
 __lua_Boot = _hx_e()
 __lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
+__lucidware_godot__Vector2_Vector2_Impl_ = _hx_e()
 __lucidware_godot__Vector3_Vector3_Impl_ = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
@@ -555,11 +556,11 @@ Array.prototype.__class__ =  Array
 Main.new = {}
 Main.__name__ = true
 Main.main = function() 
-  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=5,className="Main",methodName="main"}));
+  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=6,className="Main",methodName="main"}));
   local vec3_1 = __lucidware_godot__Vector3_Vector3_Impl_._new(1, 2, 3);
-  __haxe_Log.trace((__lucidware_godot__Vector3_Vector3_Impl_.fieldRead(vec3_1, "toString"))(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=7,className="Main",methodName="main"}));
+  __haxe_Log.trace((__lucidware_godot__Vector3_Vector3_Impl_.fieldRead(vec3_1, "toString"))(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=8,className="Main",methodName="main"}));
   local vec3_2 = __lucidware_godot__Vector3_Vector3_Impl_._new(4, 5, 6);
-  __haxe_Log.trace((__lucidware_godot__Vector3_Vector3_Impl_.fieldRead(vec3_2, "toString"))(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=9,className="Main",methodName="main"}));
+  __haxe_Log.trace((__lucidware_godot__Vector3_Vector3_Impl_.fieldRead(vec3_2, "toString"))(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=10,className="Main",methodName="main"}));
   local vec3_3 = __lucidware_godot__Vector3_Vector3_Impl_.add(vec3_1, vec3_2);
   __haxe_Log.trace((function() 
     local _hx_1
@@ -567,7 +568,19 @@ Main.main = function()
     _hx_1 = "null"; else 
     _hx_1 = (__lucidware_godot__Vector3_Vector3_Impl_.fieldRead(vec3_3, "toString"))(); end
     return _hx_1
-  end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=11,className="Main",methodName="main"}));
+  end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=12,className="Main",methodName="main"}));
+  local vec2_1 = __lucidware_godot__Vector2_Vector2_Impl_._new(1, 2);
+  __haxe_Log.trace((__lucidware_godot__Vector2_Vector2_Impl_.fieldRead(vec2_1, "toString"))(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=15,className="Main",methodName="main"}));
+  local vec2_2 = __lucidware_godot__Vector2_Vector2_Impl_._new(3, 4);
+  __haxe_Log.trace((__lucidware_godot__Vector2_Vector2_Impl_.fieldRead(vec2_2, "toString"))(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=17,className="Main",methodName="main"}));
+  local vec2_3 = __lucidware_godot__Vector2_Vector2_Impl_.add(vec2_1, vec2_2);
+  __haxe_Log.trace((function() 
+    local _hx_2
+    if (vec2_3 == nil) then 
+    _hx_2 = "null"; else 
+    _hx_2 = (__lucidware_godot__Vector2_Vector2_Impl_.fieldRead(vec2_3, "toString"))(); end
+    return _hx_2
+  end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=19,className="Main",methodName="main"}));
 end
 
 Math.new = {}
@@ -1121,6 +1134,162 @@ __lua_UserData.__name__ = true
 
 __lua_Thread.new = {}
 __lua_Thread.__name__ = true
+
+__lucidware_godot__Vector2_Vector2_Impl_.new = {}
+__lucidware_godot__Vector2_Vector2_Impl_.__name__ = true
+__lucidware_godot__Vector2_Vector2_Impl_._new = function(x,y) 
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  do return godot.Vector2.__new(x, y) end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.fieldRead = function(this1,name) 
+  if (name == "toString") then 
+    do return function() 
+      local v = this1;
+      do return v.toString() end;
+    end end;
+  else
+    local o = this1;
+    if ((function() 
+      local _hx_1
+      if ((_G.type(o) == "function") and not ((function() 
+        local _hx_2
+        if (_G.type(o) ~= "table") then 
+        _hx_2 = false; else 
+        _hx_2 = o.__name__; end
+        return _hx_2
+      end )() or (function() 
+        local _hx_3
+        if (_G.type(o) ~= "table") then 
+        _hx_3 = false; else 
+        _hx_3 = o.__ename__; end
+        return _hx_3
+      end )())) then 
+      _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
+      _hx_1 = true; elseif (o.__fields__ ~= nil) then 
+      _hx_1 = o.__fields__[name] ~= nil; else 
+      _hx_1 = o[name] ~= nil; end
+      return _hx_1
+    end )()) then 
+      do return Reflect.field(this1, name) end;
+    else
+      _G.error(__haxe_Exception.thrown("Invalid field"),0);
+    end;
+  end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.fieldWrite = function(this1,name,value) 
+  local o = this1;
+  if ((function() 
+    local _hx_1
+    if ((_G.type(o) == "function") and not ((function() 
+      local _hx_2
+      if (_G.type(o) ~= "table") then 
+      _hx_2 = false; else 
+      _hx_2 = o.__name__; end
+      return _hx_2
+    end )() or (function() 
+      local _hx_3
+      if (_G.type(o) ~= "table") then 
+      _hx_3 = false; else 
+      _hx_3 = o.__ename__; end
+      return _hx_3
+    end )())) then 
+    _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
+    _hx_1 = true; elseif (o.__fields__ ~= nil) then 
+    _hx_1 = o.__fields__[name] ~= nil; else 
+    _hx_1 = o[name] ~= nil; end
+    return _hx_1
+  end )()) then 
+    this1[name] = value;
+  else
+    _G.error(__haxe_Exception.thrown("Invalid field"),0);
+  end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.arrayRead = function(this1,n) 
+  if (n == 0) then 
+    do return this1.x end;
+  end;
+  if (n == 1) then 
+    do return this1.y end;
+  end;
+  if (n == "x") then 
+    do return this1.x end;
+  end;
+  if (n == "y") then 
+    do return this1.y end;
+  end;
+  _G.error(__haxe_Exception.thrown("Invalid index"),0);
+end
+__lucidware_godot__Vector2_Vector2_Impl_.arrayWrite = function(this1,n,value) 
+  if (n == 0) then 
+    this1.x = value;
+  else
+    if (n == 1) then 
+      this1.y = value;
+    else
+      if (n == "x") then 
+        this1.x = value;
+      else
+        if (n == "y") then 
+          this1.y = value;
+        else
+          _G.error(__haxe_Exception.thrown("Invalid index"),0);
+        end;
+      end;
+    end;
+  end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.add = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs + rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.sub = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs - rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.mul = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs * rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.div = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs / rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.mod = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs % rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.eq = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs == rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.neq = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs ~= rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.lt = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs < rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.lte = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs <= rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.gt = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs > rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.gte = function(this1,rhs) 
+  local lhs = this1;
+  do return lhs >= rhs end;
+end
+__lucidware_godot__Vector2_Vector2_Impl_.toString = function(v) 
+  do return v.toString() end;
+end
 
 __lucidware_godot__Vector3_Vector3_Impl_.new = {}
 __lucidware_godot__Vector3_Vector3_Impl_.__name__ = true
